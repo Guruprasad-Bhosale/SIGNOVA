@@ -1,0 +1,32 @@
+{
+  "dataset_version": "phase25_v1",
+  "sample_ids": [
+    "ann_v1_001"
+  ],
+  "source_sha256_map": {
+    "ann_v1_001": "1111111111111111111111111111111111111111111111111111111111111111"
+  },
+  "annotation_id_map": {
+    "ann_v1_001": "ann_v1_001"
+  },
+  "revision_id_map": {
+    "ann_v1_001": "rev_001"
+  },
+  "ordered_gloss_ids_map": {
+    "ann_v1_001": [
+      0
+    ]
+  },
+  "split_assignments": {
+    "ann_v1_001": "TRAIN"
+  },
+  "signer_id_map": {
+    "ann_v1_001": "UNKNOWN"
+  },
+  "vocabulary_sha256": "53D1F83F071E1EB384DBA7CBF2CBF8EB48FC4DE1E66C7DDBE61CD30BB7905087",
+  "feature_schema_version": "1.0.0",
+  "normalization_version": "1.0.0",
+  "input_spec_fingerprint": "F10789DDD81A2F79F3F9D208A838FB6A61B21D47C9C5F74B7783AA23B6FD724D",
+  "dataset_manifest_sha256": "21D0D95B1258BC96AE29FEE99FEDAEC2D7754E8980A8E44B07DD60A5109149AD",
+  "composite_sha256": "3A964DD53410921959CA6E7DAF12C6B5356B07D15C8A4550286B8648C24FF2F4"
+}

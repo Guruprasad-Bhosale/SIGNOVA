@@ -1,0 +1,73 @@
+{
+  "dataset_version": "phase25_frz_v001",
+  "sample_ids": [
+    "ann_frz_000",
+    "ann_frz_001",
+    "ann_frz_002",
+    "ann_frz_003",
+    "ann_frz_004"
+  ],
+  "source_sha256_map": {
+    "ann_frz_000": "0000000000000000000000000000000000000000000000000000000000000000",
+    "ann_frz_001": "0101010101010101010101010101010101010101010101010101010101010101",
+    "ann_frz_002": "0202020202020202020202020202020202020202020202020202020202020202",
+    "ann_frz_003": "0303030303030303030303030303030303030303030303030303030303030303",
+    "ann_frz_004": "0404040404040404040404040404040404040404040404040404040404040404"
+  },
+  "annotation_id_map": {
+    "ann_frz_000": "ann_frz_000",
+    "ann_frz_001": "ann_frz_001",
+    "ann_frz_002": "ann_frz_002",
+    "ann_frz_003": "ann_frz_003",
+    "ann_frz_004": "ann_frz_004"
+  },
+  "revision_id_map": {
+    "ann_frz_000": "rev_001",
+    "ann_frz_001": "rev_001",
+    "ann_frz_002": "rev_001",
+    "ann_frz_003": "rev_001",
+    "ann_frz_004": "rev_001"
+  },
+  "ordered_gloss_ids_map": {
+    "ann_frz_000": [
+      0,
+      1
+    ],
+    "ann_frz_001": [
+      0,
+      1
+    ],
+    "ann_frz_002": [
+      0,
+      1
+    ],
+    "ann_frz_003": [
+      0,
+      1
+    ],
+    "ann_frz_004": [
+      0,
+      1
+    ]
+  },
+  "split_assignments": {
+    "ann_frz_000": "TRAIN",
+    "ann_frz_001": "TRAIN",
+    "ann_frz_002": "TRAIN",
+    "ann_frz_003": "TEST",
+    "ann_frz_004": "TEST"
+  },
+  "signer_id_map": {
+    "ann_frz_000": "UNKNOWN",
+    "ann_frz_001": "UNKNOWN",
+    "ann_frz_002": "UNKNOWN",
+    "ann_frz_003": "UNKNOWN",
+    "ann_frz_004": "UNKNOWN"
+  },
+  "vocabulary_sha256": "53D1F83F071E1EB384DBA7CBF2CBF8EB48FC4DE1E66C7DDBE61CD30BB7905087",
+  "feature_schema_version": "1.0.0",
+  "normalization_version": "1.0.0",
+  "input_spec_fingerprint": "F10789DDD81A2F79F3F9D208A838FB6A61B21D47C9C5F74B7783AA23B6FD724D",
+  "dataset_manifest_sha256": "2AE53146D61B555C1228EAA35100E1AB1201C62253B1C16977F1C6C6715680D4",
+  "composite_sha256": "4244A789D827D6DD106911B98C577B433EBD9B09CAAACD1D400CE49D8758CB04"
+}

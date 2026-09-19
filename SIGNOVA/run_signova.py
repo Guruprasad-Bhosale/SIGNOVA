@@ -110,6 +110,118 @@ def run_phase21_verification():
     verify21()
 
 
+def run_phase22_check():
+    """Runs the lightweight Phase 22 diagnostic check."""
+    print("\n[+] Running Phase 22 Diagnostic Quick Check...\n")
+    from scripts.check_phase22 import main as check22_main
+    check22_main()
+
+
+def run_phase22_verification():
+    """Runs the complete Phase 22 verification workflow."""
+    print("\n[+] Running Phase 22 Verification Workflow...\n")
+    from scripts.run_phase22_verification import run_phase22_verification as verify22
+    verify22()
+
+
+def run_phase23_check():
+    """Runs the lightweight Phase 23 diagnostic check."""
+    print("\n[+] Running Phase 23 Diagnostic Quick Check...\n")
+    from scripts.check_phase23 import main as check23_main
+    check23_main()
+
+
+def run_phase23_verification():
+    """Runs the complete Phase 23 verification workflow."""
+    print("\n[+] Running Phase 23 Verification Workflow...\n")
+    from scripts.run_phase23_verification import run_phase23_verification as verify23
+    verify23()
+
+
+def run_phase23_training(train: bool = False):
+    """Runs the Phase 23 gated CTC training orchestrator."""
+    print("\n[+] Running Phase 23 Gated Training Orchestrator...\n")
+    from scripts.run_phase23_training import main as train23_main
+    if train:
+        sys.argv = ["run_phase23_training.py", "--train"]
+    else:
+        sys.argv = ["run_phase23_training.py"]
+    train23_main()
+
+
+def run_phase24_check():
+    """Runs the lightweight Phase 24 diagnostic check."""
+    print("\n[+] Running Phase 24 Diagnostic Quick Check...\n")
+    from scripts.check_phase24 import main as check24_main
+    sys.argv = ["check_phase24.py"]
+    check24_main()
+
+
+def run_phase24_verification():
+    """Runs the complete Phase 24 verification workflow."""
+    print("\n[+] Running Phase 24 Verification Workflow...\n")
+    from scripts.run_phase24_verification import run_phase24_verification as verify24
+    verify24()
+
+
+def run_phase24_training(train: bool = False):
+    """Runs the Phase 24 gated CTC training execution."""
+    print("\n[+] Running Phase 24 Gated CTC Training Execution...\n")
+    from scripts.run_phase24_training import main as train24_main
+    if train:
+        sys.argv = ["run_phase24_training.py", "--train"]
+    else:
+        sys.argv = ["run_phase24_training.py"]
+    train24_main()
+
+
+def run_phase24_evaluation():
+    """Runs the Phase 24 held-out evaluation & error analysis."""
+    print("\n[+] Running Phase 24 Held-Out Evaluation...\n")
+    from scripts.run_phase24_evaluation import main as eval24_main
+    sys.argv = ["run_phase24_evaluation.py"]
+    eval24_main()
+
+
+def run_phase25_check():
+    """Runs the Phase 25 readiness and human acquisition check."""
+    print("\n[+] Running Phase 25 Diagnostic Quick Check...\n")
+    from scripts.check_phase25 import main as check25_main
+    sys.argv = ["check_phase25.py"]
+    check25_main()
+
+
+def run_phase25_verification():
+    """Runs the complete Phase 25 verification workflow."""
+    print("\n[+] Running Phase 25 Verification Workflow...\n")
+    from scripts.run_phase25_verification import run_phase25_verification as verify25
+    verify25()
+
+
+def run_phase25_acquisition():
+    """Runs the Phase 25 human acquisition runner."""
+    print("\n[+] Running Phase 25 Human Acquisition Runner...\n")
+    from scripts.run_phase25_acquisition import main as acq25_main
+    sys.argv = ["run_phase25_acquisition.py"]
+    acq25_main()
+
+
+def run_phase25_build_dataset():
+    """Runs the Phase 25 dataset builder."""
+    print("\n[+] Running Phase 25 Dataset Builder...\n")
+    from scripts.run_phase25_build_dataset import main as build25_main
+    sys.argv = ["run_phase25_build_dataset.py"]
+    build25_main()
+
+
+def run_phase25_freeze_dataset():
+    """Runs the Phase 25 dataset freeze tool."""
+    print("\n[+] Running Phase 25 Dataset Freeze Tool...\n")
+    from scripts.run_phase25_freeze_dataset import main as freeze25_main
+    sys.argv = ["run_phase25_freeze_dataset.py"]
+    freeze25_main()
+
+
 def run_smoke_test():
     """Runs the dynamic real data pipeline smoke test."""
     print("\n[+] Running Phase 19 Real Data Pipeline Smoke Test...\n")
@@ -164,6 +276,14 @@ def interactive_menu():
         print("  [9] Inspect Pilot Assignments & Annotation Statistics")
         print("  [21] Run Phase 21 Genuine CTC Diagnostic Check")
         print("  [V21] Run Phase 21 Verification & Status Summary")
+        print("  [22] Run Phase 22 Human Annotation & Dataset Formation Diagnostic Check")
+        print("  [V22] Run Phase 22 Verification & Status Dashboard")
+        print("  [23] Run Phase 23 Execution & Qualification Diagnostic Check")
+        print("  [V23] Run Phase 23 Verification & Multi-Dimensional Dashboard")
+        print("  [24] Run Phase 24 First Real CTC Experiment Diagnostic Check")
+        print("  [V24] Run Phase 24 Verification & Status Dashboard")
+        print("  [25] Run Phase 25 Human Annotation & Acquisition Diagnostic Check")
+        print("  [V25] Run Phase 25 Verification & Status Dashboard")
         print("  [T] Run Automated Unit Tests (pytest)")
         print("  [0] Exit")
         print("-" * 80)
@@ -213,6 +333,30 @@ def interactive_menu():
         elif choice in ("V21", "VERIFY21"):
             run_phase21_verification()
             input("\nPress Enter to return to menu...")
+        elif choice in ("22", "P22"):
+            run_phase22_check()
+            input("\nPress Enter to return to menu...")
+        elif choice in ("V22", "VERIFY22"):
+            run_phase22_verification()
+            input("\nPress Enter to return to menu...")
+        elif choice in ("23", "P23"):
+            run_phase23_check()
+            input("\nPress Enter to return to menu...")
+        elif choice in ("V23", "VERIFY23"):
+            run_phase23_verification()
+            input("\nPress Enter to return to menu...")
+        elif choice in ("24", "P24"):
+            run_phase24_check()
+            input("\nPress Enter to return to menu...")
+        elif choice in ("V24", "VERIFY24"):
+            run_phase24_verification()
+            input("\nPress Enter to return to menu...")
+        elif choice in ("25", "P25"):
+            run_phase25_check()
+            input("\nPress Enter to return to menu...")
+        elif choice in ("V25", "VERIFY25"):
+            run_phase25_verification()
+            input("\nPress Enter to return to menu...")
         elif choice in ("T", "TEST"):
             run_unit_tests()
             input("\nPress Enter to return to menu...")
@@ -234,6 +378,20 @@ def main():
     parser.add_argument("--verify", action="store_true", help="Run Phase 19 verification report")
     parser.add_argument("--phase21-check", action="store_true", help="Run Phase 21 Diagnostic Check")
     parser.add_argument("--phase21-verify", action="store_true", help="Run Phase 21 Verification Workflow")
+    parser.add_argument("--phase22-check", action="store_true", help="Run Phase 22 Diagnostic Check")
+    parser.add_argument("--phase22-verify", action="store_true", help="Run Phase 22 Verification Dashboard")
+    parser.add_argument("--phase23-check", action="store_true", help="Run Phase 23 Diagnostic Check")
+    parser.add_argument("--phase23-verify", action="store_true", help="Run Phase 23 Verification Dashboard")
+    parser.add_argument("--phase23-train", action="store_true", help="Run Phase 23 Gated Real CTC Training")
+    parser.add_argument("--phase24-check", action="store_true", help="Run Phase 24 Diagnostic Check")
+    parser.add_argument("--phase24-verify", action="store_true", help="Run Phase 24 Verification Dashboard")
+    parser.add_argument("--phase24-train", action="store_true", help="Run Phase 24 Gated Real CTC Training")
+    parser.add_argument("--phase24-eval", action="store_true", help="Run Phase 24 Held-Out Evaluation")
+    parser.add_argument("--phase25-check", action="store_true", help="Run Phase 25 Diagnostic Check")
+    parser.add_argument("--phase25-verify", action="store_true", help="Run Phase 25 Verification Dashboard")
+    parser.add_argument("--phase25-acquire", action="store_true", help="Run Phase 25 Human Acquisition Runner")
+    parser.add_argument("--phase25-build", action="store_true", help="Run Phase 25 Dataset Builder")
+    parser.add_argument("--phase25-freeze", action="store_true", help="Run Phase 25 Dataset Freeze Tool")
     parser.add_argument("--port", type=int, default=8000, help="Port to bind server (default: 8000)")
     args = parser.parse_args()
 
@@ -255,6 +413,34 @@ def main():
         run_phase21_check()
     elif args.phase21_verify:
         run_phase21_verification()
+    elif args.phase22_check:
+        run_phase22_check()
+    elif args.phase22_verify:
+        run_phase22_verification()
+    elif args.phase23_check:
+        run_phase23_check()
+    elif args.phase23_verify:
+        run_phase23_verification()
+    elif args.phase23_train:
+        run_phase23_training(train=True)
+    elif args.phase24_check:
+        run_phase24_check()
+    elif args.phase24_verify:
+        run_phase24_verification()
+    elif args.phase24_train:
+        run_phase24_training(train=True)
+    elif args.phase24_eval:
+        run_phase24_evaluation()
+    elif args.phase25_check:
+        run_phase25_check()
+    elif args.phase25_verify:
+        run_phase25_verification()
+    elif args.phase25_acquire:
+        run_phase25_acquisition()
+    elif args.phase25_build:
+        run_phase25_build_dataset()
+    elif args.phase25_freeze:
+        run_phase25_freeze_dataset()
     else:
         interactive_menu()
 
