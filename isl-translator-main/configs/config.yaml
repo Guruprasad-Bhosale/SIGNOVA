@@ -1,0 +1,133 @@
+# =============================================================================
+# ISL Translator Configuration
+# =============================================================================
+
+# Paths
+paths:
+  data_dir: "./data"
+  raw_dir: "./data/raw"
+  processed_dir: "./data/processed"
+  checkpoint_dir: "./checkpoints"
+  log_dir: "./runs"
+
+# Dataset
+dataset:
+  name: "isl_csltr"  # isl_csltr or include
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+  max_seq_length: 512  # Maximum frames per video
+  min_seq_length: 16   # Minimum frames
+
+# Keypoint Extraction
+keypoints:
+  use_holistic: true
+  num_pose_landmarks: 33
+  num_face_landmarks: 468
+  num_hand_landmarks: 42  # 21 per hand
+  total_landmarks: 543
+  confidence_threshold: 0.5
+  interpolate_missing: true
+
+# Model Architecture
+model:
+  type: "hybrid"  # stgcn, transformer, or hybrid
+  
+  # ST-GCN settings
+  stgcn:
+    in_channels: 3  # x, y, confidence
+    hidden_channels: 64
+    num_layers: 4
+    temporal_kernel: 9
+    dropout: 0.2
+  
+  # Transformer settings
+  transformer:
+    d_model: 256
+    nhead: 8
+    num_encoder_layers: 4
+    dim_feedforward: 1024
+    dropout: 0.1
+    max_position: 1024
+  
+  # CTC Decoder
+  ctc:
+    vocab_size: 1100  # ~1036 glosses + special tokens
+    blank_token: 0
+    
+  # Translation (IndicTrans2)
+  translation:
+    model_name: "ai4bharat/indictrans2-indic-en-1B"
+    source_lang: "isl_gloss"
+    target_langs: ["hin_Deva", "eng_Latn"]
+
+# Training
+training:
+  batch_size: 8
+  num_workers: 4
+  epochs: 100
+  
+  # Optimizer
+  optimizer: "adamw"
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  
+  # Scheduler
+  scheduler: "cosine"
+  warmup_epochs: 5
+  min_lr: 0.000001
+  
+  # Mixed Precision (for 8GB VRAM)
+  use_amp: true
+  gradient_accumulation: 4  # Effective batch = 8 * 4 = 32
+  
+  # Regularization
+  label_smoothing: 0.1
+  gradient_clip: 1.0
+  
+  # Early Stopping
+  early_stopping:
+    patience: 15
+    min_delta: 0.001
+    monitor: "val_wer"
+  
+  # Checkpointing
+  save_every: 5
+  save_best: true
+
+# Data Augmentation
+augmentation:
+  enabled: true
+  
+  # Temporal
+  speed_range: [0.8, 1.2]
+  random_crop: true
+  
+  # Spatial
+  rotation_range: [-15, 15]
+  scale_range: [0.9, 1.1]
+  translation_range: [-0.1, 0.1]
+  
+  # Noise
+  gaussian_noise: 0.01
+  landmark_dropout: 0.1
+
+# Evaluation
+evaluation:
+  beam_width: 5
+  metrics: ["wer", "bleu", "cer"]
+
+# Inference
+inference:
+  device: "cuda"
+  batch_size: 1
+  sliding_window: 64
+  overlap: 32
+  visualize_landmarks: true
+
+# Logging
+logging:
+  level: "INFO"
+  tensorboard: true
+  wandb: false
+  project_name: "isl-translator"

@@ -1,0 +1,271 @@
+{
+  "timestamp_iso": "2026-09-18T00:32:00Z",
+  "data_gate_status": "STATE_C",
+  "supervision_blocker": "No verified continuous sign gloss sequences exist locally.",
+  "real_continuous_corpus": {
+    "stream_count": 72,
+    "total_frames": 11980,
+    "mean_length_frames": 166.38888888888889,
+    "median_length_frames": 172.0,
+    "tracking_density": {
+      "pose": 1.0,
+      "face": 1.0,
+      "left_hand": 1.0,
+      "right_hand": 1.0
+    }
+  },
+  "synthetic_ctc_benchmarks": {
+    "BiGRU_HANDS": {
+      "feature_group": "HANDS",
+      "backbone": "gru",
+      "num_landmarks": 42,
+      "val_ter": 1.0,
+      "test_ter": 1.0,
+      "test_exact_match": 0.0,
+      "test_substitutions": 0,
+      "test_insertions": 0,
+      "test_deletions": 84,
+      "test_macro_f1": 0.0
+    },
+    "BiGRU_HANDS_POSE": {
+      "feature_group": "HANDS_POSE",
+      "backbone": "gru",
+      "num_landmarks": 75,
+      "val_ter": 1.0,
+      "test_ter": 1.0,
+      "test_exact_match": 0.0,
+      "test_substitutions": 0,
+      "test_insertions": 0,
+      "test_deletions": 84,
+      "test_macro_f1": 0.0
+    },
+    "BiGRU_FULL": {
+      "feature_group": "FULL",
+      "backbone": "gru",
+      "num_landmarks": 543,
+      "val_ter": 1.0,
+      "test_ter": 1.0,
+      "test_exact_match": 0.0,
+      "test_substitutions": 0,
+      "test_insertions": 0,
+      "test_deletions": 84,
+      "test_macro_f1": 0.0
+    },
+    "TCN_HANDS_POSE": {
+      "feature_group": "HANDS_POSE",
+      "backbone": "tcn",
+      "num_landmarks": 75,
+      "val_ter": 0.9048,
+      "test_ter": 0.8929,
+      "test_exact_match": 0.0,
+      "test_substitutions": 23,
+      "test_insertions": 1,
+      "test_deletions": 51,
+      "test_macro_f1": 0.4914
+    }
+  },
+  "transfer_diagnostics": {
+    "timestamp_iso": "2026-09-18T00:32:00Z",
+    "description": "Continuous feature representation statistics of Phase 4 pretrained vs random initialized BiGRU on real continuous ISL feature streams.",
+    "pretrained_mean_embedding_variance": 0.0008890623071541389,
+    "random_mean_embedding_variance": 0.14781013280153274,
+    "pretrained_mean_temporal_smoothness_delta": 0.07627261132001877,
+    "random_mean_temporal_smoothness_delta": 6.1351575215657554,
+    "diagnostic_interpretation": "Pretrained encoder produces structured, smooth temporal trajectory manifolds with controlled variance compared to random projection on real continuous streams."
+  },
+  "latency_profile": {
+    "T_32": {
+      "sequence_length": 32,
+      "latency_ms": 3.359,
+      "throughput_fps": 9527.8,
+      "device": "CPU"
+    },
+    "T_64": {
+      "sequence_length": 64,
+      "latency_ms": 6.543,
+      "throughput_fps": 9780.9,
+      "device": "CPU"
+    },
+    "T_128": {
+      "sequence_length": 128,
+      "latency_ms": 13.022,
+      "throughput_fps": 9829.2,
+      "device": "CPU"
+    },
+    "T_256": {
+      "sequence_length": 256,
+      "latency_ms": 24.537,
+      "throughput_fps": 10433.2,
+      "device": "CPU"
+    }
+  },
+  "qualitative_samples": [
+    {
+      "sample_index": 1,
+      "ground_truth_tokens": [
+        "NAMASTE",
+        "COLLEGE"
+      ],
+      "predicted_tokens": [
+        "COLLEGE",
+        "YES",
+        "HELP"
+      ],
+      "ter": 1.5,
+      "substitutions": 2,
+      "insertions": 1,
+      "deletions": 0,
+      "exact_match": false
+    },
+    {
+      "sample_index": 2,
+      "ground_truth_tokens": [
+        "NO",
+        "COLLEGE",
+        "GOODBYE",
+        "HELLO"
+      ],
+      "predicted_tokens": [
+        "NAMASTE",
+        "THANK_YOU"
+      ],
+      "ter": 1.0,
+      "substitutions": 2,
+      "insertions": 0,
+      "deletions": 2,
+      "exact_match": false
+    },
+    {
+      "sample_index": 3,
+      "ground_truth_tokens": [
+        "GOODBYE",
+        "HELLO",
+        "THANK_YOU",
+        "PLEASE"
+      ],
+      "predicted_tokens": [
+        "GOODBYE",
+        "THANK_YOU"
+      ],
+      "ter": 0.5,
+      "substitutions": 0,
+      "insertions": 0,
+      "deletions": 2,
+      "exact_match": false
+    },
+    {
+      "sample_index": 4,
+      "ground_truth_tokens": [
+        "TIME",
+        "GOODBYE"
+      ],
+      "predicted_tokens": [
+        "COLLEGE"
+      ],
+      "ter": 1.0,
+      "substitutions": 1,
+      "insertions": 0,
+      "deletions": 1,
+      "exact_match": false
+    },
+    {
+      "sample_index": 5,
+      "ground_truth_tokens": [
+        "NO",
+        "GOODBYE"
+      ],
+      "predicted_tokens": [
+        "TIME"
+      ],
+      "ter": 1.0,
+      "substitutions": 1,
+      "insertions": 0,
+      "deletions": 1,
+      "exact_match": false
+    },
+    {
+      "sample_index": 6,
+      "ground_truth_tokens": [
+        "GOODBYE",
+        "HELLO"
+      ],
+      "predicted_tokens": [
+        "HELP"
+      ],
+      "ter": 1.0,
+      "substitutions": 1,
+      "insertions": 0,
+      "deletions": 1,
+      "exact_match": false
+    },
+    {
+      "sample_index": 7,
+      "ground_truth_tokens": [
+        "COLLEGE",
+        "TIME",
+        "THANK_YOU",
+        "NO",
+        "THANK_YOU"
+      ],
+      "predicted_tokens": [
+        "PLEASE",
+        "TIME"
+      ],
+      "ter": 0.8,
+      "substitutions": 1,
+      "insertions": 0,
+      "deletions": 3,
+      "exact_match": false
+    },
+    {
+      "sample_index": 8,
+      "ground_truth_tokens": [
+        "TIME",
+        "TIME",
+        "PLEASE",
+        "TIME",
+        "HELLO"
+      ],
+      "predicted_tokens": [
+        "GOODBYE"
+      ],
+      "ter": 1.0,
+      "substitutions": 1,
+      "insertions": 0,
+      "deletions": 4,
+      "exact_match": false
+    },
+    {
+      "sample_index": 9,
+      "ground_truth_tokens": [
+        "TIME",
+        "YES"
+      ],
+      "predicted_tokens": [
+        "GOODBYE"
+      ],
+      "ter": 1.0,
+      "substitutions": 1,
+      "insertions": 0,
+      "deletions": 1,
+      "exact_match": false
+    },
+    {
+      "sample_index": 10,
+      "ground_truth_tokens": [
+        "NO",
+        "NAMASTE",
+        "HELLO",
+        "NAMASTE"
+      ],
+      "predicted_tokens": [
+        "GOODBYE"
+      ],
+      "ter": 1.0,
+      "substitutions": 1,
+      "insertions": 0,
+      "deletions": 3,
+      "exact_match": false
+    }
+  ]
+}

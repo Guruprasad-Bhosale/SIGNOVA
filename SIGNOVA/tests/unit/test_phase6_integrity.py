@@ -1,0 +1,41 @@
+"""
+Phase 6 Reference Repository Integrity Baseline Tests for SIGNOVA.
+
+Verifies:
+1. 44/44 reference files in ISLTranslate-main and isl-translator-main match cryptographic SHA-256 baseline.
+2. Read-only policy preservation across external codebases.
+"""
+
+import hashlib
+import json
+from pathlib import Path
+import pytest
+
+
+def test_reference_repositories_sha256_integrity():
+    baseline_path = Path("data/manifests/reference_integrity_baseline.json")
+    assert baseline_path.is_file(), "Reference integrity baseline JSON manifest must exist"
+
+    data = json.loads(baseline_path.read_text(encoding="utf-8"))
+    assert "repositories" in data
+
+    total_files = 0
+    matches = 0
+    mismatches = []
+
+    for repo_name, repo_info in data["repositories"].items():
+        for rel_path, file_info in repo_info.get("files", {}).items():
+            total_files += 1
+            target_path = Path("..") / repo_name / rel_path
+            assert target_path.is_file(), f"Reference file missing: {target_path}"
+
+            actual_sha = hashlib.sha256(target_path.read_bytes()).hexdigest().upper()
+            expected_sha = file_info["sha256"].upper()
+
+            if actual_sha == expected_sha:
+                matches += 1
+            else:
+                mismatches.append(f"Hash mismatch on {target_path}: expected {expected_sha}, got {actual_sha}")
+
+    assert matches == 44, f"Expected 44 matching reference files, got {matches}. Mismatches: {mismatches}"
+    assert len(mismatches) == 0

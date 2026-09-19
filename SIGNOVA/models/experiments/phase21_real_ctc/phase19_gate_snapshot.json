@@ -1,0 +1,75 @@
+{
+  "snapshot_timestamp": "2026-09-19T08:52:28.290340+00:00",
+  "supervision_state": "STATE_B",
+  "real_ctc_status": "BLOCKED",
+  "real_ctc_training_allowed": false,
+  "pilot_status": "BLOCKED_HUMAN_RESOURCE",
+  "dataset_scale": "NO_DATA",
+  "human_data_present": false,
+  "human_data_authenticated": false,
+  "human_data_qualified": false,
+  "training_eligible_data": false,
+  "sample_accounting": {
+    "total_discovered": 0,
+    "total_annotations": 0,
+    "authenticated_annotations": 0,
+    "qualified_annotations": 0,
+    "verified_annotations": 0,
+    "pending_review_samples": 0,
+    "rejected_samples": 0,
+    "training_eligible_samples": 0,
+    "ctc_infeasible_samples": 0,
+    "leakage_excluded_samples": 0
+  },
+  "split_strategy": "NONE",
+  "ctc_feasibility": {
+    "total_sequences": 0,
+    "feasible_sequences": 0,
+    "infeasible_sequences": 0,
+    "feasibility_rate": 0.0,
+    "min_feature_frames": null,
+    "median_feature_frames": null,
+    "max_feature_frames": null,
+    "min_gloss_length": null,
+    "median_gloss_length": null,
+    "max_gloss_length": null,
+    "max_required_frames": null,
+    "feasibility_status": "NO_DATA"
+  },
+  "failed_conditions": [
+    "GENUINE_SEQUENTIAL_ANNOTATIONS_EXIST",
+    "VIDEO_ANNOTATION_PAIRING_VERIFIED",
+    "ANNOTATION_SCHEMA_VALIDATION_PASSED",
+    "VOCABULARY_DERIVED_FROM_GENUINE_ANNOTATIONS",
+    "ANNOTATION_QUALITY_MEETS_TRAINING_THRESHOLD",
+    "REQUIRED_HUMAN_REVIEW_COMPLETE",
+    "TRAIN_VAL_TEST_SPLIT_VALID",
+    "SIGNER_SESSION_INDEPENDENCE_CHARACTERIZED",
+    "MINIMUM_SAMPLE_THRESHOLD_SATISFIED"
+  ],
+  "training_authorization": {
+    "authorized": false,
+    "supervision_state": "STATE_B",
+    "reason": "no_genuine_human_annotations_present",
+    "failed_conditions": [
+      "GENUINE_SEQUENTIAL_ANNOTATIONS_EXIST",
+      "VIDEO_ANNOTATION_PAIRING_VERIFIED",
+      "ANNOTATION_SCHEMA_VALIDATION_PASSED",
+      "VOCABULARY_DERIVED_FROM_GENUINE_ANNOTATIONS",
+      "ANNOTATION_QUALITY_MEETS_TRAINING_THRESHOLD",
+      "REQUIRED_HUMAN_REVIEW_COMPLETE",
+      "TRAIN_VAL_TEST_SPLIT_VALID",
+      "SIGNER_SESSION_INDEPENDENCE_CHARACTERIZED",
+      "MINIMUM_SAMPLE_THRESHOLD_SATISFIED"
+    ]
+  },
+  "dataset_fingerprint": null,
+  "reference_integrity": {
+    "status": "PASSED",
+    "matching_files": 44,
+    "total_files": 44,
+    "all_44_files_unchanged": true,
+    "mismatches": []
+  },
+  "fast_exit_required": true
+}

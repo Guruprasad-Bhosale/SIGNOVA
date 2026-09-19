@@ -1,0 +1,192 @@
+{
+  "timestamp_iso": "2026-09-17T21:50:00Z",
+  "verified_algorithm": "SHA-256",
+  "repositories": {
+    "ISLTranslate-main": {
+      "file_count": 5,
+      "files": {
+        ".gitignore": {
+          "size_bytes": 3078,
+          "sha256": "5E2C671DDC9E301DAFC241AD1A7C07AA85A91FEF560A17721B41977B9EDDBA17"
+        },
+        "data/ISL-signer_validation.csv": {
+          "size_bytes": 25632,
+          "sha256": "37B4E784D14C400398140077BDBE2D5077BBD00C7CAC30BCE38C614AEDFECA8A"
+        },
+        "data/ISLTranslate.csv": {
+          "size_bytes": 1642541,
+          "sha256": "7CAEDC841963C5844AB00A695AFF5B5E202072E9406E5C587803EEC9A6F6D835"
+        },
+        "README.md": {
+          "size_bytes": 6158,
+          "sha256": "A059D5634F047685258882E39002270E605585C1081F08BFDCC080DD39D40BF6"
+        },
+        "thumbnail.png": {
+          "size_bytes": 579763,
+          "sha256": "C901E8DD9A3B8FC4C4E8E938C0F3070435CB61AE1A7FBDEB8E65CBC17936AA9F"
+        }
+      }
+    },
+    "isl-translator-main": {
+      "file_count": 39,
+      "files": {
+        ".gitignore": {
+          "size_bytes": 808,
+          "sha256": "62C9A206A1B8CBE3EF8497F5F67B5918F2976D9BB0B74FBA73610FFD5A498BCE"
+        },
+        ".python-version": {
+          "size_bytes": 5,
+          "sha256": "49A506DD32096B010D75205ACF3430C9AE6C40351888129499E5A5E487126C93"
+        },
+        "configs/config.yaml": {
+          "size_bytes": 2585,
+          "sha256": "B33E9F1B8F5233DE784B7DEC47E82CC0D6BEB8C1EAD8C60F150E78BFD1B3EDAC"
+        },
+        "data/codebase.zip": {
+          "size_bytes": 75445,
+          "sha256": "DB084FB99937A74D7E7D778A1900FAD5F49A0EECC23AE903D4BF81A281BF2FEE"
+        },
+        "main.py": {
+          "size_bytes": 92,
+          "sha256": "D3F2E59725FEC3CD10DF5754702987FC9F27918BD62110CC13CEFDF74E50EC1B"
+        },
+        "notebooks/01_extract_keypoints.ipynb": {
+          "size_bytes": 63705,
+          "sha256": "69410959338C1A4FE488A09D211C6535E7D5470D421CA8C10B7B6A741A3DE538"
+        },
+        "notebooks/02_pretraining_include.ipynb": {
+          "size_bytes": 7120704,
+          "sha256": "05E54EE8ACF6B3E41B20A5AF8DA37AA2F9E27C0DD654A133DFCF2D71AA96E00B"
+        },
+        "notebooks/03_finetune_csltr.ipynb": {
+          "size_bytes": 7468,
+          "sha256": "7049B1539DE4D4450B8C5C4093144FC5DB034F50C2E1FD6FF611FA64AC8C2F2E"
+        },
+        "notebooks/kaggle_run/training.ipynb": {
+          "size_bytes": 15875,
+          "sha256": "6016003E95DA18205A460ED0828A4035C743275EB6F409185B2AFEE4C9F6C7A6"
+        },
+        "pyproject.toml": {
+          "size_bytes": 2075,
+          "sha256": "4C7D6F92186D29FBC6E4BAEAD405BAA0030BA8F74DB1EA216D90873CF030F01A"
+        },
+        "README.md": {
+          "size_bytes": 2108,
+          "sha256": "60E986777B5FB281FC0E1B1FCFDC356B89FBDAD218FAFEDA7040FC2B54BBC617"
+        },
+        "requirements.txt": {
+          "size_bytes": 317234,
+          "sha256": "BF247E36235802F6D31ABC28239B1066B1E0E05CA3185263B77BF422728C294F"
+        },
+        "scripts/download_include.py": {
+          "size_bytes": 2303,
+          "sha256": "C558E63E4079D7ACD18A956653CE46E9DFD7B5C1C7591AFB13AC46F51B8349C9"
+        },
+        "scripts/extract_keypoints.py": {
+          "size_bytes": 6837,
+          "sha256": "A5F058EE22183E62B1A399B2CDF905813C50F5852E26315F1386A447ED23AF3C"
+        },
+        "scripts/fetch_and_upload_checkpoints.py": {
+          "size_bytes": 2945,
+          "sha256": "9EF016203040D239F11968CE2DEEE38AF07D1B4DE271C5546837EAB58AB70B5E"
+        },
+        "scripts/pdf_content.txt": {
+          "size_bytes": 27907,
+          "sha256": "9E34BDD7157807713622B3008FF8051854AEFAFCA36605368874724661AAAAED"
+        },
+        "scripts/read_pdf_temp.py": {
+          "size_bytes": 692,
+          "sha256": "35D599C84489BC2021EAE5AF9DCB22A76DBF4C2E399DE3B225EFB7A82AE2D01D"
+        },
+        "scripts/train.py": {
+          "size_bytes": 5042,
+          "sha256": "C3C78A5C9DE36D79E64B9CC620B6520C5C4AD12513D83C9A28EE2B06D12ABEA6"
+        },
+        "src/__init__.py": {
+          "size_bytes": 173,
+          "sha256": "357E3A2B17CEC515726ED72253EF6C066B01C3DC9B80F6D51F6949C005B0608D"
+        },
+        "src/inference/__init__.py": {
+          "size_bytes": 193,
+          "sha256": "6199682721AA75DC31FE1FF82DE41A07EFF41AA4ABB32525BBB2F7E947AE3A39"
+        },
+        "src/inference/app.py": {
+          "size_bytes": 7541,
+          "sha256": "7D23230A50FE3DB32C75A563141F2BA58412B48C504D448337E86AE9F0595CA6"
+        },
+        "src/inference/demo.py": {
+          "size_bytes": 15475,
+          "sha256": "39B65C31D0352B6F4EF080E2C413800E987E8E84C00ADFA660C67DC42562CE77"
+        },
+        "src/inference/pipeline.py": {
+          "size_bytes": 5574,
+          "sha256": "82E44D548EBE7B2FF32A14EF627C8CBA411430BFE92545544FFCF539DB9B25AD"
+        },
+        "src/models/__init__.py": {
+          "size_bytes": 360,
+          "sha256": "BF45E5E2AD2839C680F855F88E918AE1373D96403CFC2818947655CEBCCB08AB"
+        },
+        "src/models/ctc_decoder.py": {
+          "size_bytes": 8720,
+          "sha256": "70B4A611BFD3AF312A3206C94DF27FB4BFFB54F0417631E84F9DD6DE929EC7AF"
+        },
+        "src/models/isl_model.py": {
+          "size_bytes": 10826,
+          "sha256": "CC577B00D112E830870A7FEA421422E85B18002DA66CD0A982F71958CA0CF74B"
+        },
+        "src/models/stgcn.py": {
+          "size_bytes": 11298,
+          "sha256": "2E4BF40DA96B018FB08A68BE77714DD146036EB36F090D8EFA844914758BFE5B"
+        },
+        "src/models/transformer.py": {
+          "size_bytes": 10022,
+          "sha256": "EF9264B508E03171D6CF483AF7D199F25B0EA52D679A2E83D23718967017D4CA"
+        },
+        "src/models/translator.py": {
+          "size_bytes": 6863,
+          "sha256": "0C52C3F84C1FA44DA4371B269CB89D024B6598A5F02758F070A11DDB64237C3A"
+        },
+        "src/preprocessing/__init__.py": {
+          "size_bytes": 326,
+          "sha256": "FE6FCC04AF4F23041D5F5A90F87250D9B2CE30CF438E5DA04995D66EF031CD8F"
+        },
+        "src/preprocessing/data_augmentation.py": {
+          "size_bytes": 11108,
+          "sha256": "9BAF19053BAB381A481D16D68C569346C1D904887011838ACD70680597C1E7DA"
+        },
+        "src/preprocessing/dataset.py": {
+          "size_bytes": 10161,
+          "sha256": "855A7C471FCFAD67AEEF7C6CDE335C707D9BE9FB60561F67A41FC30AE010785D"
+        },
+        "src/preprocessing/keypoint_extractor.py": {
+          "size_bytes": 15977,
+          "sha256": "2408B7EE21D7ADB0E8436F15D77DB823D998E1CF2910B3D972387F8AC5AAB477"
+        },
+        "src/training/__init__.py": {
+          "size_bytes": 291,
+          "sha256": "F51864EE66B1239F8FCADA69B78EE128A5228DCE3B33DB23292C4F900645FDBC"
+        },
+        "src/training/losses.py": {
+          "size_bytes": 2795,
+          "sha256": "BF4F8E54B5BD9C94DE33EEDDEABE37E2413B1076A13B250C101E0D1E391F41EC"
+        },
+        "src/training/metrics.py": {
+          "size_bytes": 8053,
+          "sha256": "D2236F0631F61FD36B434D8EB6558FE48F2BDCC964474439D7BF07EBA0F6C3E9"
+        },
+        "src/training/trainer.py": {
+          "size_bytes": 12634,
+          "sha256": "AD76C1B30639DBF540C4824BEA0B56623ED59631CC7FF01FA9DB16381875309B"
+        },
+        "uv.lock": {
+          "size_bytes": 638887,
+          "sha256": "5B987EB8B27DB5FD56997E5542D56B371346E941A6A804AB944826A3F86F6867"
+        },
+        "zenodo_files.txt": {
+          "size_bytes": 835,
+          "sha256": "7B967580C4CB905DC2A9CF4DAF17579230326A0A0C070C716A7C2F543E1F576A"
+        }
+      }
+    }
+  }
+}

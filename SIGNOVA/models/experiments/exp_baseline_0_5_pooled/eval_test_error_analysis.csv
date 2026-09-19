@@ -1,0 +1,10 @@
+sample_id,session_id,true_class_id,true_class_name,predicted_class_id,prediction_confidence
+iso_yes_008,session_08,3,YES,1,0.2188
+iso_yes_016,session_08,3,YES,1,0.2063
+iso_yes_024,session_08,3,YES,1,0.2152
+iso_how_are_you_008,session_08,6,HOW_ARE_YOU,9,0.3307
+iso_how_are_you_016,session_08,6,HOW_ARE_YOU,9,0.3297
+iso_how_are_you_024,session_08,6,HOW_ARE_YOU,9,0.3313
+iso_goodbye_008,session_08,8,GOODBYE,0,0.3109
+iso_goodbye_016,session_08,8,GOODBYE,0,0.3136
+iso_goodbye_024,session_08,8,GOODBYE,0,0.3199

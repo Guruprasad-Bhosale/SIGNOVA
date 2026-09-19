@@ -1,0 +1,26 @@
+# SIGNOVA Inference Configuration
+
+inference:
+  device: "auto"  # auto | cuda | cpu
+  confidence_threshold: 0.5
+  max_sequence_length: 128
+  sliding_window: 64
+  overlap: 32
+
+  decoding:
+    method: "beam_search"  # greedy | beam_search
+    beam_width: 5
+    blank_token: 0
+
+  webcam:
+    camera_index: 0
+    width: 1280
+    height: 720
+    fps: 30
+    mirror: true
+    visualize_landmarks: true
+
+  postprocessing:
+    collapse_repeated: true
+    remove_blanks: true
+    smooth_glosses: true

@@ -1,0 +1,36 @@
+# SIGNOVA Phase 3 Model Configuration
+
+model:
+  name: "baseline_rnn"  # Options: baseline_rnn, baseline_tcn, baseline_pooled
+
+  input:
+    landmarks: 543
+    coordinates: 3
+    landmark_group: "full"  # Options: full (543), hands_pose (75), hands (42), pose (33), face (468)
+
+  projection:
+    feature_projection_dim: 256
+    hidden_dim: 256
+    dropout: 0.2
+
+  baseline_rnn:
+    rnn_type: "gru"       # Options: gru, lstm
+    hidden_size: 256
+    num_layers: 2
+    bidirectional: true
+    dropout: 0.2
+
+  baseline_tcn:
+    channels: [256, 256, 256]
+    kernel_size: 3
+    dropout: 0.2
+
+  baseline_pooled:
+    projection_dim: 256
+    hidden_dim: 256
+    dropout: 0.2
+
+  classifier:
+    dropout: 0.2
+    num_classes: 10
+

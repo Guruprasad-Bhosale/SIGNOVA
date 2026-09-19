@@ -1,0 +1,11 @@
+class_id,class_name,sample_count,train_count,validation_count,test_count
+0,HELLO,28,22,3,3
+1,THANK_YOU,28,22,3,3
+2,PLEASE,28,22,3,3
+3,YES,28,22,3,3
+4,NO,28,22,3,3
+5,NAME,28,22,3,3
+6,HOW_ARE_YOU,28,22,3,3
+7,HELP,28,22,3,3
+8,GOODBYE,28,22,3,3
+9,WELCOME,28,22,3,3

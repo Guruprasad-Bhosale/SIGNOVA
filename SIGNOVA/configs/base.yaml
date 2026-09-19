@@ -1,0 +1,14 @@
+project:
+  name: SIGNOVA
+  version: 0.1.0
+  task: continuous_isl_translation
+  source_language: Indian Sign Language (ISL)
+  target_language: English
+  phase: 0
+  description: "Continuous Indian Sign Language to English Translation Pipeline"
+
+runtime:
+  seed: 42
+  device: auto  # auto | cuda | cpu
+  num_threads: 4
+  log_level: INFO

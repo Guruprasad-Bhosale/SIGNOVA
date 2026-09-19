@@ -1,0 +1,1 @@
+sample_id,video_id,annotation_id,annotator_id,reviewer_id,signer_id,session_id,source_checksum,annotation_version,vocabulary_version,sequence_length,temporal_alignment_available,quality_grade,training_eligible,split

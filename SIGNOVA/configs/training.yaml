@@ -1,0 +1,51 @@
+# SIGNOVA Phase 3 Training Configuration (Conservative local RTX 3050 6GB defaults)
+
+training:
+  # General
+  experiment_name: "phase3_isolated_baseline"
+  output_dir: "./outputs"
+  checkpoint_dir: "./models/experiments"
+  seed: 42
+
+  # Hyperparameters (Conservative defaults for 6GB VRAM)
+  batch_size: 4
+  epochs: 20
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  num_workers: 0  # Safe Windows DataLoader defaults
+
+  # Optimization & Memory Management
+  mixed_precision: true  # Native AMP for RTX 3050 / FP32 fallback for CPU
+  gradient_accumulation_steps: 4  # Effective batch = 4 * 4 = 16
+  gradient_clip: 1.0
+
+  # Class Imbalance Handling (Mutually Exclusive)
+  class_weighting:
+    enabled: true
+    strategy: "inverse_frequency"  # Options: inverse_frequency, none
+
+  sampler:
+    enabled: false
+    type: "weighted_random"
+
+  # Learning Rate Schedule
+  scheduler:
+    enabled: true
+    type: "reduce_on_plateau"  # Options: reduce_on_plateau, cosine, none
+    patience: 3
+    factor: 0.5
+    min_lr: 0.00001
+
+  # Early Stopping & Monitoring
+  early_stopping:
+    enabled: true
+    patience: 5
+    min_delta: 0.001
+    monitor: "val_macro_f1"
+    mode: "max"
+
+  # Checkpointing
+  checkpoint:
+    save_best: true
+    save_last: true
+

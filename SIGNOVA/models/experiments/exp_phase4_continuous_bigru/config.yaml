@@ -1,0 +1,10 @@
+experiment_name: exp_phase4_continuous_bigru
+model_type: continuous_bigru
+landmark_group: hands_pose
+num_landmarks: 75
+projection_dim: 256
+hidden_size: 256
+num_layers: 2
+bidirectional: true
+device: cpu
+status: verified_continuous_temporal_representation

@@ -1,0 +1,51 @@
+# SIGNOVA Dataset Configuration (Refined for Phase 1)
+
+datasets:
+  isltranslate:
+    enabled: true
+    description: "ISLTranslate: Continuous Indian Sign Language Dataset (31k sentence pairs, ACL 2023)"
+    root: "../ISLTranslate-main"
+    annotations_csv: "../ISLTranslate-main/data/ISLTranslate.csv"
+    validation_csv: "../ISLTranslate-main/data/ISL-signer_validation.csv"
+    video_root: null  # Unmounted in Phase 1 (Remote on Hugging Face)
+    remote:
+      host: "huggingface"
+      repo_id: "Exploration-Lab/iSign"
+      url: "https://huggingface.co/datasets/Exploration-Lab/iSign"
+      license: "CC BY-NC 4.0"
+      archive_format: "multipart_tar_gz"
+    validation:
+      verify_annotations: true
+      detect_duplicates: true
+      check_local_videos: false  # Local videos are remote in Phase 1
+    splits:
+      strategy: "deterministic_hash"
+      train: 0.8
+      val: 0.1
+      test: 0.1
+
+  include:
+    enabled: false
+    description: "INCLUDE: Isolated Word-Level ISL Dataset (263 classes, 4,287 clips, Zenodo 4010759)"
+    root: null
+    remote:
+      host: "zenodo"
+      record_id: "4010759"
+      license: "Academic Non-Commercial"
+
+preprocessing:
+  target_fps: 30
+  max_frames: 128
+  min_frames: 8
+  normalize_landmarks: true
+  center_on: "mid_hip"
+  scale_by: "shoulder_distance"
+
+landmarks:
+  extractor: "mediapipe_holistic"
+  num_pose_landmarks: 33
+  num_face_landmarks: 468
+  num_hand_landmarks: 42
+  total_landmarks: 543
+  coordinates_per_landmark: 3
+  interpolate_missing: true

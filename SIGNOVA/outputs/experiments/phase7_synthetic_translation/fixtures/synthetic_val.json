@@ -1,0 +1,104 @@
+{
+  "disclaimer": "SYNTHETIC FIXTURE \u2014 NOT REAL ISL TRANSLATION PERFORMANCE",
+  "split": "val",
+  "sample_count": 6,
+  "samples": [
+    {
+      "sample_id": "SYNTH-PAIR-0031",
+      "source_tokens": [
+        "YOU",
+        "LIVE",
+        "WHERE"
+      ],
+      "target_text": "Where do you live?",
+      "signer_id": "SYNTH-SIGNER-3",
+      "session_id": "SYNTH-SESS-1",
+      "split": "val",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0032",
+      "source_tokens": [
+        "BROTHER",
+        "ENGINEER",
+        "CITY",
+        "WORK"
+      ],
+      "target_text": "My brother works as an engineer in the city.",
+      "signer_id": "SYNTH-SIGNER-4",
+      "session_id": "SYNTH-SESS-2",
+      "split": "val",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0033",
+      "source_tokens": [
+        "NIGHT",
+        "SLEEP",
+        "WELL"
+      ],
+      "target_text": "I slept well at night.",
+      "signer_id": "SYNTH-SIGNER-1",
+      "session_id": "SYNTH-SESS-3",
+      "split": "val",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0034",
+      "source_tokens": [
+        "COFFEE",
+        "SUGAR",
+        "LESS"
+      ],
+      "target_text": "I want coffee with less sugar.",
+      "signer_id": "SYNTH-SIGNER-2",
+      "session_id": "SYNTH-SESS-4",
+      "split": "val",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0035",
+      "source_tokens": [
+        "MONEY",
+        "BANK",
+        "DEPOSIT"
+      ],
+      "target_text": "I deposited money in the bank.",
+      "signer_id": "SYNTH-SIGNER-3",
+      "session_id": "SYNTH-SESS-5",
+      "split": "val",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0036",
+      "source_tokens": [
+        "COMPUTER",
+        "FAST",
+        "WORK"
+      ],
+      "target_text": "The computer works fast.",
+      "signer_id": "SYNTH-SIGNER-4",
+      "session_id": "SYNTH-SESS-6",
+      "split": "val",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    }
+  ]
+}

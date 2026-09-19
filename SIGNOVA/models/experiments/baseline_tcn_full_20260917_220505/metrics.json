@@ -1,0 +1,38 @@
+{
+  "experiment_dir": "G:\\SingLang\\SIGNOVA\\models\\experiments\\baseline_tcn_full_20260917_220505",
+  "best_epoch": 2,
+  "best_val_metric": 0.0907,
+  "total_train_time_sec": 3.28,
+  "training_history": [
+    {
+      "epoch": 1,
+      "train_loss": 2.2899,
+      "val_loss": 2.2933,
+      "val_accuracy": 0.1,
+      "val_macro_f1": 0.0182,
+      "val_weighted_f1": 0.0182,
+      "epoch_time_sec": 1.66,
+      "lr": 0.0003
+    },
+    {
+      "epoch": 2,
+      "train_loss": 2.1408,
+      "val_loss": 2.0708,
+      "val_accuracy": 0.2,
+      "val_macro_f1": 0.0907,
+      "val_weighted_f1": 0.0907,
+      "epoch_time_sec": 1.56,
+      "lr": 0.0003
+    }
+  ],
+  "test_metrics": {
+    "loss": 2.0683,
+    "accuracy": 0.2,
+    "balanced_accuracy": 0.2,
+    "macro_precision": 0.063,
+    "macro_recall": 0.2,
+    "macro_f1": 0.0897,
+    "weighted_f1": 0.0897,
+    "top5_accuracy": 0.7
+  }
+}

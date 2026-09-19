@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGNOVA — Deaf-ISL Sequence Annotation Platform</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --success: #10b981;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 24px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+    .badge {
+      background: rgba(99, 102, 241, 0.2);
+      color: #818cf8;
+      border: 1px solid #6366f1;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 320px 1fr 360px;
+      gap: 24px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    h2, h3 {
+      margin-top: 0;
+      color: var(--text);
+      font-size: 16px;
+    }
+    .list-item {
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid transparent;
+      display: flex;
+      justify-content: space-between;
+    }
+    .list-item:hover, .list-item.active {
+      border-color: var(--primary);
+      background: rgba(99, 102, 241, 0.1);
+    }
+    .btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .btn:hover { background: var(--primary-hover); }
+    .btn-secondary { background: var(--border); }
+    .btn-success { background: var(--success); }
+    .btn-danger { background: var(--danger); }
+    input, textarea {
+      width: 100%;
+      background: #0b1120;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 6px;
+      box-sizing: border-box;
+      margin-bottom: 12px;
+    }
+    .token-chip {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(99, 102, 241, 0.2);
+      border: 1px solid var(--primary);
+      color: #c7d2fe;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin: 4px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div>
+      <h1 style="margin: 0; font-size: 22px;">SIGNOVA Deaf-ISL Annotation Platform</h1>
+      <p style="margin: 4px 0 0 0; color: var(--text-muted); font-size: 13px;">Phase 11 — Offline Human Sequence Annotation (STATE_B)</p>
+    </div>
+    <div style="display: flex; gap: 8px; align-items: center;">
+      <span class="badge">SUPERVISION: STATE_B</span>
+      <span class="badge" style="border-color: #ef4444; color: #f87171; background: rgba(239,68,68,0.1);">REAL CTC: BLOCKED</span>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- Video Explorer -->
+    <div class="card">
+      <h3>1. Diagnostic Video Corpus</h3>
+      <div id="videoList" style="max-height: 540px; overflow-y: auto;">
+        <div style="color: var(--text-muted);">Loading video catalogue...</div>
+      </div>
+    </div>
+
+    <!-- Video Inspection & Sequence Editor -->
+    <div class="card">
+      <h3>2. Video Playback & Timeline</h3>
+      <div style="background: black; height: 260px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); margin-bottom: 12px;" id="playerBox">
+        [ Video Playback / Frame Inspector ]
+      </div>
+      <h3>Ordered ISL Gloss Sequence</h3>
+      <div id="tokenContainer" style="min-height: 48px; border: 1px dashed var(--border); border-radius: 8px; padding: 8px; margin-bottom: 12px;">
+        <span style="color: var(--text-muted); font-size: 13px;">No tokens added yet.</span>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <input type="text" id="glossInput" placeholder="Enter ISL gloss (e.g. COLLEGE, ICE-CREAM, FS-DELHI)">
+        <button class="btn" onclick="addGloss()">Add</button>
+      </div>
+      <label style="font-size: 12px; color: var(--text-muted);">English Translation Target (for NMT supervision):</label>
+      <input type="text" id="transInput" placeholder="Natural English sentence equivalent">
+    </div>
+
+    <!-- Session Workflow & Actions -->
+    <div class="card">
+      <h3>3. Workflow & Verification</h3>
+      <div style="margin-bottom: 16px;">
+        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">Current Session Status:</div>
+        <div id="statusBadge" style="font-weight: 600; font-size: 14px; color: var(--warning);">UNANNOTATED</div>
+      </div>
+      <label style="font-size: 12px; color: var(--text-muted);">Annotator ID:</label>
+      <input type="text" id="annotatorId" value="annotator_deaf_01">
+      <label style="font-size: 12px; color: var(--text-muted);">Annotation Notes:</label>
+      <textarea id="notesInput" rows="3" placeholder="Linguistic notes, confidence reasons..."></textarea>
+      
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <button class="btn btn-secondary" onclick="saveDraft()">💾 Save Draft</button>
+        <button class="btn btn-success" onclick="submitAnnotation()">🚀 Submit for Review</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let activeSampleId = "1782bea75c7d-1";
+    let currentGlosses = [];
+
+    async function loadVideos() {
+      try {
+        const res = await fetch("/api/videos");
+        const data = await res.json();
+        const listDiv = document.getElementById("videoList");
+        listDiv.innerHTML = "";
+        data.videos.forEach(v => {
+          const div = document.createElement("div");
+          div.className = `list-item ${v.sample_id === activeSampleId ? 'active' : ''}`;
+          div.innerHTML = `<span>${v.sample_id}</span><span style="font-size:11px;color:${v.has_submitted ? '#10b981' : v.has_draft ? '#f59e0b' : '#64748b'}">${v.has_submitted ? 'SUBMITTED' : v.has_draft ? 'DRAFT' : 'NEW'}</span>`;
+          div.onclick = () => selectSample(v.sample_id);
+          listDiv.appendChild(div);
+        });
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    function selectSample(id) {
+      activeSampleId = id;
+      loadVideos();
+      loadAnnotation(id);
+    }
+
+    async function loadAnnotation(id) {
+      try {
+        const res = await fetch(`/api/annotations/${id}`);
+        const data = await res.json();
+        currentGlosses = data.data.glosses || [];
+        document.getElementById("transInput").value = data.data.english_translation || "";
+        document.getElementById("statusBadge").innerText = data.data.review_status || "UNANNOTATED";
+        renderTokens();
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    function renderTokens() {
+      const container = document.getElementById("tokenContainer");
+      if (currentGlosses.length === 0) {
+        container.innerHTML = `<span style="color: var(--text-muted); font-size: 13px;">No tokens added yet.</span>`;
+        return;
+      }
+      container.innerHTML = currentGlosses.map((g, idx) => `
+        <span class="token-chip">${g} <span style="margin-left:6px;cursor:pointer;opacity:0.7" onclick="removeGloss(${idx})">×</span></span>
+      `).join("");
+    }
+
+    function addGloss() {
+      const val = document.getElementById("glossInput").value.trim().toUpperCase();
+      if (val) {
+        currentGlosses.push(val);
+        document.getElementById("glossInput").value = "";
+        renderTokens();
+      }
+    }
+
+    function removeGloss(idx) {
+      currentGlosses.splice(idx, 1);
+      renderTokens();
+    }
+
+    async function saveDraft() {
+      const payload = {
+        sample_id: activeSampleId,
+        annotator_id: document.getElementById("annotatorId").value,
+        glosses: currentGlosses,
+        english_translation: document.getElementById("transInput").value,
+        notes: document.getElementById("notesInput").value
+      };
+      const res = await fetch("/api/annotations/draft", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      document.getElementById("statusBadge").innerText = data.annotation.review_status;
+      loadVideos();
+      alert("Draft saved locally.");
+    }
+
+    async function submitAnnotation() {
+      const payload = {
+        sample_id: activeSampleId,
+        annotator_id: document.getElementById("annotatorId").value
+      };
+      const res = await fetch("/api/annotations/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      document.getElementById("statusBadge").innerText = data.annotation.review_status;
+      loadVideos();
+      alert("Annotation submitted for linguist review.");
+    }
+
+    loadVideos();
+    loadAnnotation(activeSampleId);
+  </script>
+</body>
+</html>

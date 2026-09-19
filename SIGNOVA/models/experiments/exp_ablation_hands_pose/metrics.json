@@ -1,0 +1,118 @@
+{
+  "experiment_dir": "G:\\SingLang\\SIGNOVA\\models\\experiments\\exp_ablation_hands_pose",
+  "best_epoch": 5,
+  "best_val_metric": 1.0,
+  "total_train_time_sec": 40.86,
+  "training_history": [
+    {
+      "epoch": 1,
+      "train_loss": 2.2538,
+      "val_loss": 1.9647,
+      "val_accuracy": 0.2,
+      "val_macro_f1": 0.1067,
+      "val_weighted_f1": 0.1067,
+      "epoch_time_sec": 4.02,
+      "lr": 0.0003
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.7456,
+      "val_loss": 1.3015,
+      "val_accuracy": 0.7,
+      "val_macro_f1": 0.6,
+      "val_weighted_f1": 0.6,
+      "epoch_time_sec": 4.24,
+      "lr": 0.0003
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.0863,
+      "val_loss": 0.7349,
+      "val_accuracy": 0.8,
+      "val_macro_f1": 0.7333,
+      "val_weighted_f1": 0.7333,
+      "epoch_time_sec": 4.06,
+      "lr": 0.0003
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.6701,
+      "val_loss": 0.4344,
+      "val_accuracy": 0.9,
+      "val_macro_f1": 0.8667,
+      "val_weighted_f1": 0.8667,
+      "epoch_time_sec": 3.97,
+      "lr": 0.0003
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.3957,
+      "val_loss": 0.2584,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "epoch_time_sec": 4.02,
+      "lr": 0.0003
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.236,
+      "val_loss": 0.1435,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "epoch_time_sec": 4.3,
+      "lr": 0.0003
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.1278,
+      "val_loss": 0.059,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "epoch_time_sec": 3.89,
+      "lr": 0.0003
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.0493,
+      "val_loss": 0.0218,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "epoch_time_sec": 4.06,
+      "lr": 0.00015
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.0217,
+      "val_loss": 0.0154,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "epoch_time_sec": 3.97,
+      "lr": 0.00015
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.0143,
+      "val_loss": 0.0105,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "epoch_time_sec": 4.0,
+      "lr": 0.00015
+    }
+  ],
+  "test_metrics": {
+    "loss": 0.2555,
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "top5_accuracy": 1.0
+  }
+}

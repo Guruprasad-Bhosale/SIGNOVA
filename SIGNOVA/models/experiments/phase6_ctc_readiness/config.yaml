@@ -1,0 +1,11 @@
+batch_size: 4
+data_gate_verdict: STATE_C
+encoder_type: bigru
+epochs: 15
+experiment_name: phase6_ctc_readiness
+feature_group: HANDS_POSE
+hidden_dim: 128
+learning_rate: 0.001
+num_layers: 2
+phase: 6
+seed: 42

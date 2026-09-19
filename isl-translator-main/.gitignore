@@ -1,0 +1,73 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Data directories (large files)
+data/raw/
+data/processed/
+data/augmented/
+*.mp4
+*.avi
+*.mov
+
+# Model checkpoints (large files)
+checkpoints/
+*.pt
+*.pth
+*.onnx
+
+# Logs
+runs/
+logs/
+*.log
+wandb/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Environment files
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Kaggle credentials (KEEP PRIVATE)
+kaggle.json
+.kaggle-key.json
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+include training/
+data/codebase_upload/
+temp_kaggle_output/
+
+# Test cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# UV lock file (can regenerate)
+# uv.lock  # Keep this for reproducibility

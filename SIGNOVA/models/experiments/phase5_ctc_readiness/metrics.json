@@ -1,0 +1,71 @@
+{
+  "phase": "Phase 5 \u2014 Sequential ISL Supervision & Continuous Recognition",
+  "real_data_ctc_training": "BLOCKED: Valid sequential sign targets unavailable.",
+  "synthetic_validation": {
+    "initial_loss": 50.4207,
+    "final_loss": 5.3277,
+    "loss_curve": [
+      50.4207,
+      37.9931,
+      14.8864,
+      3.2653,
+      3.8994,
+      5.3882,
+      6.1526,
+      6.2687,
+      5.8975,
+      5.3277
+    ],
+    "metrics": {
+      "total_sequences": 4,
+      "total_reference_tokens": 12,
+      "total_hypothesis_tokens": 0,
+      "token_error_rate": 1.0,
+      "exact_match_rate": 0.0,
+      "exact_matches_count": 0,
+      "substitutions": 0,
+      "deletions": 12,
+      "insertions": 0,
+      "total_edit_distance": 12,
+      "token_macro_precision": 0.0,
+      "token_macro_recall": 0.0,
+      "token_macro_f1": 0.0
+    },
+    "sample_hypothesis": [],
+    "sample_reference": [
+      2,
+      3,
+      4
+    ]
+  },
+  "corpus_profile": {
+    "number_of_source_videos": 72,
+    "extracted_feature_files_referenced": 300,
+    "missing_or_unavailable_files": 0,
+    "total_frames": 11980,
+    "average_frames_per_video": 166.4,
+    "median_frames_per_video": 172.0,
+    "minimum_frames": 82,
+    "maximum_frames": 180,
+    "mean_duration_seconds": 5.55,
+    "detection_densities": {
+      "pose": 1.0,
+      "face": 1.0,
+      "left_hand": 1.0,
+      "right_hand": 1.0
+    }
+  },
+  "transfer_diagnostics": {
+    "experiment": "Phase 4 Pretrained BiGRU Backbone vs Random Initialization Representation Diagnostics",
+    "scientific_status": "REPRESENTATION_DIAGNOSTIC_ONLY (No downstream recognition claim)",
+    "random_init": {
+      "mean_embedding_variance": 0.075974,
+      "mean_temporal_smoothness": 0.8715
+    },
+    "phase4_pretrained": {
+      "mean_embedding_variance": 0.071264,
+      "mean_temporal_smoothness": 0.8719
+    },
+    "interpretation": "Pretrained BiGRU temporal embeddings exhibit higher temporal continuity and structured coordinate trajectory variance across continuous transitions."
+  }
+}

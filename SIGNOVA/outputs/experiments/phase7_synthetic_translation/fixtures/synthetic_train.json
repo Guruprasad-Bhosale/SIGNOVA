@@ -1,0 +1,494 @@
+{
+  "disclaimer": "SYNTHETIC FIXTURE \u2014 NOT REAL ISL TRANSLATION PERFORMANCE",
+  "split": "train",
+  "sample_count": 30,
+  "samples": [
+    {
+      "sample_id": "SYNTH-PAIR-0001",
+      "source_tokens": [
+        "I",
+        "GO",
+        "COLLEGE",
+        "TODAY"
+      ],
+      "target_text": "I am going to college today.",
+      "signer_id": "SYNTH-SIGNER-1",
+      "session_id": "SYNTH-SESS-1",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0002",
+      "source_tokens": [
+        "YOU",
+        "NAME",
+        "WHAT"
+      ],
+      "target_text": "What is your name?",
+      "signer_id": "SYNTH-SIGNER-2",
+      "session_id": "SYNTH-SESS-2",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0003",
+      "source_tokens": [
+        "ME",
+        "DEAF",
+        "PROUD"
+      ],
+      "target_text": "I am deaf and proud.",
+      "signer_id": "SYNTH-SIGNER-3",
+      "session_id": "SYNTH-SESS-3",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0004",
+      "source_tokens": [
+        "BOOK",
+        "READ",
+        "FINISH"
+      ],
+      "target_text": "I have finished reading the book.",
+      "signer_id": "SYNTH-SIGNER-4",
+      "session_id": "SYNTH-SESS-4",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0005",
+      "source_tokens": [
+        "FATHER",
+        "DOCTOR",
+        "HOSPITAL",
+        "WORK"
+      ],
+      "target_text": "My father works as a doctor in a hospital.",
+      "signer_id": "SYNTH-SIGNER-1",
+      "session_id": "SYNTH-SESS-5",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0006",
+      "source_tokens": [
+        "MOTHER",
+        "TEACHER",
+        "SCHOOL"
+      ],
+      "target_text": "My mother is a teacher at school.",
+      "signer_id": "SYNTH-SIGNER-2",
+      "session_id": "SYNTH-SESS-6",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0007",
+      "source_tokens": [
+        "TOMORROW",
+        "MEETING",
+        "TIME",
+        "WHAT"
+      ],
+      "target_text": "What time is the meeting tomorrow?",
+      "signer_id": "SYNTH-SIGNER-3",
+      "session_id": "SYNTH-SESS-1",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0008",
+      "source_tokens": [
+        "HELP",
+        "ME",
+        "PLEASE"
+      ],
+      "target_text": "Please help me.",
+      "signer_id": "SYNTH-SIGNER-4",
+      "session_id": "SYNTH-SESS-2",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0009",
+      "source_tokens": [
+        "WATER",
+        "DRINK",
+        "WANT"
+      ],
+      "target_text": "I want to drink water.",
+      "signer_id": "SYNTH-SIGNER-1",
+      "session_id": "SYNTH-SESS-3",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0010",
+      "source_tokens": [
+        "WHERE",
+        "TRAIN",
+        "STATION"
+      ],
+      "target_text": "Where is the train station?",
+      "signer_id": "SYNTH-SIGNER-2",
+      "session_id": "SYNTH-SESS-4",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0011",
+      "source_tokens": [
+        "INDIA",
+        "BEAUTIFUL",
+        "COUNTRY"
+      ],
+      "target_text": "India is a beautiful country.",
+      "signer_id": "SYNTH-SIGNER-3",
+      "session_id": "SYNTH-SESS-5",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0012",
+      "source_tokens": [
+        "SIGN",
+        "LANGUAGE",
+        "LEARN",
+        "EASY"
+      ],
+      "target_text": "Learning sign language is easy.",
+      "signer_id": "SYNTH-SIGNER-4",
+      "session_id": "SYNTH-SESS-6",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0013",
+      "source_tokens": [
+        "MORNING",
+        "GOOD",
+        "HOW",
+        "YOU"
+      ],
+      "target_text": "Good morning, how are you?",
+      "signer_id": "SYNTH-SIGNER-1",
+      "session_id": "SYNTH-SESS-1",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0014",
+      "source_tokens": [
+        "THANK",
+        "YOU",
+        "VERY",
+        "MUCH"
+      ],
+      "target_text": "Thank you very much.",
+      "signer_id": "SYNTH-SIGNER-2",
+      "session_id": "SYNTH-SESS-2",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0015",
+      "source_tokens": [
+        "DOCTOR",
+        "MEDICINE",
+        "GIVE"
+      ],
+      "target_text": "The doctor gave medicine.",
+      "signer_id": "SYNTH-SIGNER-3",
+      "session_id": "SYNTH-SESS-3",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0016",
+      "source_tokens": [
+        "DOOR",
+        "CLOSE",
+        "PLEASE"
+      ],
+      "target_text": "Please close the door.",
+      "signer_id": "SYNTH-SIGNER-4",
+      "session_id": "SYNTH-SESS-4",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0017",
+      "source_tokens": [
+        "TIME",
+        "NOW",
+        "WHAT"
+      ],
+      "target_text": "What is the time now?",
+      "signer_id": "SYNTH-SIGNER-1",
+      "session_id": "SYNTH-SESS-5",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0018",
+      "source_tokens": [
+        "BUS",
+        "STOP",
+        "WHERE"
+      ],
+      "target_text": "Where is the bus stop?",
+      "signer_id": "SYNTH-SIGNER-2",
+      "session_id": "SYNTH-SESS-6",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0019",
+      "source_tokens": [
+        "FOOD",
+        "DELICIOUS",
+        "EAT"
+      ],
+      "target_text": "I ate delicious food.",
+      "signer_id": "SYNTH-SIGNER-3",
+      "session_id": "SYNTH-SESS-1",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0020",
+      "source_tokens": [
+        "FRIEND",
+        "MEET",
+        "YESTERDAY"
+      ],
+      "target_text": "I met my friend yesterday.",
+      "signer_id": "SYNTH-SIGNER-4",
+      "session_id": "SYNTH-SESS-2",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0021",
+      "source_tokens": [
+        "RAIN",
+        "HEAVY",
+        "OUTSIDE"
+      ],
+      "target_text": "It is raining heavily outside.",
+      "signer_id": "SYNTH-SIGNER-1",
+      "session_id": "SYNTH-SESS-3",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0022",
+      "source_tokens": [
+        "SUN",
+        "HOT",
+        "SUMMER"
+      ],
+      "target_text": "The sun is hot in summer.",
+      "signer_id": "SYNTH-SIGNER-2",
+      "session_id": "SYNTH-SESS-4",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0023",
+      "source_tokens": [
+        "MARKET",
+        "GO",
+        "VEGETABLE",
+        "BUY"
+      ],
+      "target_text": "I am going to the market to buy vegetables.",
+      "signer_id": "SYNTH-SIGNER-3",
+      "session_id": "SYNTH-SESS-5",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0024",
+      "source_tokens": [
+        "STUDENT",
+        "EXAM",
+        "PASS"
+      ],
+      "target_text": "The student passed the exam.",
+      "signer_id": "SYNTH-SIGNER-4",
+      "session_id": "SYNTH-SESS-6",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0025",
+      "source_tokens": [
+        "TEACHER",
+        "CLASS",
+        "TEACH"
+      ],
+      "target_text": "The teacher is teaching the class.",
+      "signer_id": "SYNTH-SIGNER-1",
+      "session_id": "SYNTH-SESS-1",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0026",
+      "source_tokens": [
+        "HOME",
+        "RETURN",
+        "EVENING"
+      ],
+      "target_text": "I will return home in the evening.",
+      "signer_id": "SYNTH-SIGNER-2",
+      "session_id": "SYNTH-SESS-2",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0027",
+      "source_tokens": [
+        "TEA",
+        "HOT",
+        "DRINK"
+      ],
+      "target_text": "I drink hot tea.",
+      "signer_id": "SYNTH-SIGNER-3",
+      "session_id": "SYNTH-SESS-3",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0028",
+      "source_tokens": [
+        "WINDOW",
+        "OPEN",
+        "AIR"
+      ],
+      "target_text": "Open the window for air.",
+      "signer_id": "SYNTH-SIGNER-4",
+      "session_id": "SYNTH-SESS-4",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0029",
+      "source_tokens": [
+        "WRITE",
+        "LETTER",
+        "POST"
+      ],
+      "target_text": "I wrote and posted a letter.",
+      "signer_id": "SYNTH-SIGNER-1",
+      "session_id": "SYNTH-SESS-5",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    },
+    {
+      "sample_id": "SYNTH-PAIR-0030",
+      "source_tokens": [
+        "WALK",
+        "PARK",
+        "DAILY"
+      ],
+      "target_text": "I walk in the park daily.",
+      "signer_id": "SYNTH-SIGNER-2",
+      "session_id": "SYNTH-SESS-6",
+      "split": "train",
+      "provenance": "Phase 7 Synthetic Pair Fixture",
+      "license": "Synthetic Internal Fixture",
+      "source_type": "synthetic_gloss_sequence",
+      "target_type": "english_sentence"
+    }
+  ]
+}

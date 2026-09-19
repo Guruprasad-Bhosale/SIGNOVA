@@ -1,0 +1,9 @@
+experiment_name: phase5_ctc_readiness
+model_type: ctc_continuous_recognizer
+backbone: gru
+landmark_group: hands_pose
+num_landmarks: 75
+vocab_size: 12
+device: cpu
+status: verified_synthetic_ctc_readiness
+real_training_status: blocked_no_sequential_labels

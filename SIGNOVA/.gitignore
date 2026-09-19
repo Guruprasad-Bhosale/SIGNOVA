@@ -1,0 +1,93 @@
+# Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Pytest & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs & Runtime Outputs
+logs/*
+!logs/.gitkeep
+outputs/predictions/*
+outputs/metrics/*
+outputs/visualizations/*
+outputs/reports/*
+!outputs/predictions/.gitkeep
+!outputs/metrics/.gitkeep
+!outputs/visualizations/.gitkeep
+!outputs/reports/.gitkeep
+
+# Machine Learning Checkpoints & Heavy Weights
+models/checkpoints/*
+models/exported/*
+!models/checkpoints/.gitkeep
+!models/exported/.gitkeep
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.onnx
+*.engine
+*.bin
+
+# Heavy Dataset Media & Preprocessed Feature Arrays
+data/raw/*
+data/interim/*
+data/processed/*
+data/features/*
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+!data/features/.gitkeep
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+*.zip
+*.tar
+*.tar.gz
+*.npy
+*.npz
+
+# Node / Web Frontend
+apps/web/node_modules/
+apps/web/dist/
+apps/web/.vite/

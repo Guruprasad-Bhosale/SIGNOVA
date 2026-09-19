@@ -1,0 +1,30 @@
+{
+  "manifest_name": "ISLTranslate Canonical Manifest",
+  "manifest_version": "1.0.0",
+  "dataset_source": "ISLTranslate (ACL 2023)",
+  "dataset_version": "v1.0",
+  "generation_strategy": "deterministic_sha256_hash",
+  "total_records": 31222,
+  "splits": {
+    "train": 25004,
+    "val": 3116,
+    "test": 3102
+  },
+  "split_ratio": {
+    "train": 0.8008,
+    "val": 0.0998,
+    "test": 0.0994
+  },
+  "artifacts": {
+    "csv_manifest": "data/manifests/isltranslate_manifest.csv",
+    "json_manifest": "data/manifests/isltranslate_manifest.json",
+    "integrity_manifest": "data/manifests/isltranslate_integrity.csv",
+    "duplicate_report": "data/manifests/duplicate_report.csv",
+    "proposed_independent_split": "data/manifests/proposed_signer_independent_split.csv"
+  },
+  "generation_environment": {
+    "os": "Windows 11",
+    "python": "3.12.10",
+    "platform": "SIGNOVA Phase 1 Data Pipeline"
+  }
+}

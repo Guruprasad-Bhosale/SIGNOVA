@@ -1,0 +1,8 @@
+dataset_id,source,license,download_method,local_path,checksum,file_count,size,annotation_count,video_count,status
+isl-csltr,https://data.mendeley.com/datasets/kcmpdxky7p/1,CC BY 4.0,MANUAL_HTTP,data/external/isl-csltr,UNACQUIRED_SEMANTIC_GAP,0,0B,0,0,NOT_ACQUIRED
+isltranslate,https://github.com/Exploration-Lab/ISLTranslate,Research Only,GIT_SUBMODULE,ISLTranslate-main,44_FILE_SHA256_VERIFIED,2,1.6MB,31194,31194,PROFILED_DIAGNOSTIC_ONLY
+isl-fingerspelling,https://kirandevraj.github.io/ISL-Fingerspelling/,CC BY-NC 4.0,HTTP_ARCHIVE,data/external/isl-fingerspelling,UNACQUIRED_RESTRICTED_DOMAIN,0,0B,0,0,NOT_ACQUIRED
+islvt,https://data.mendeley.com/datasets/38mfd79bzy/1,CC BY 4.0,MANUAL_HTTP,data/external/islvt,UNACQUIRED_SEMANTIC_GAP,0,0B,0,0,NOT_ACQUIRED
+include,https://github.com/AI4Bharat/INCLUDE,CC BY-NC-SA 4.0,GIT_OR_DRIVE,data/external/include,UNACQUIRED_ISOLATED_ONLY,0,0B,0,0,NOT_ACQUIRED
+iiith-cislr,Institutional Lab Archive,Restricted Institutional,RESTRICTED_REQUEST,data/external/iiith-cislr,ACCESS_RESTRICTED,0,0B,0,0,ACCESS_RESTRICTED
+paid-sample-commercial,Commercial Sign Vendor,Commercial Proprietary,PAID_API,N/A,N/A,0,0B,0,0,PAID_NOT_USED

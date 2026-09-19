@@ -1,0 +1,620 @@
+--- Page 1 ---
+ABSTRACT  
+ 
+Indian Sign Language (ISL) is a vital communication tool for over 2.7 million deaf and hard -
+of-hearing individuals in India. Despite a hearing -impaired population exceeding 5 million, 
+significant communication barriers persist in essential domains like edu cation and healthcare, 
+contributing to unemployment rates above 75%. Existing technologies, often designed for 
+American Sign Language (ASL), fail to interpret ISL's unique complexities, including two -
+handed configurations, non -manual markers like facial ex pressions, and distinct regional 
+syntactic variations. This research -oriented project aims to develop a system that processes live 
+video feeds to detect and translate ISL sequences into Hindi or English, supporting both 
+isolated words and continuous expres sions to minimize misinterpretation .  
+The proposed methodology involves a hybrid deep learning pipeline. A computer vision 
+module, specifically MediaPipe, is used for real -time landmark extraction from video feeds, 
+capturing 21 hand keypoints and body pos e data. This spatiotemporal data is then fed into a 
+fused architecture combining Convolutional Neural Networks (CNN) and Transformer models. 
+This hybrid approach is designed to analyze both the spatial configurations of handshapes and 
+the temporal patterns  of sign sequences .  
+The system will be trained on a custom -augmented ISL corpus, aggregated from public 
+repositories like iSign and new custom recordings, to improve generalizability. Evaluation will 
+be conducted using standard metrics, including mean av erage precision (mAP), frames -per-
+second (FPS), and BLEU scores for translation accuracy. The project's objectives are to 
+investigate this architecture's effectiveness, aiming for an mAP above 97% and BLEU scores 
+exceeding 0.75, while simultaneously benchm arking a new public ISL video repository.  
+This framework not only prototypes a functional bidirectional translator but also advances the 
+theoretical understanding of culturally adaptive models for low -resource sign languages. The 
+outcomes aim to provide em pirical contributions to human -computer interaction and computer 
+vision , aligning with global accessibility standards under the UN Convention on the Rights of 
+Persons with Disabilities and targeting a latency reduction of up to 40%.  
+ 
+ 
+ 
+ 
+ 
+ 
+--- Page 2 ---
+LIST OF FIGURES  
+Figure 
+No. Figure Title  Page 
+No. 
+Figure 2.1  Comparison of Accuracy Across Key ISL Recognition 
+Methodologies  [7] 
+Figure 3.1  Proposed Hybrid Deep Learning System Architecture  [9] 
+ 
+  
+LIST OF TABLES  
+Table No.  Table Title  Page No.  
+Table 2.1  Comparative Analysis of Recent ISL Recognition Studies  [6] 
+Table 3.1  Phased Implementation Plan  [11] 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- Page 3 ---
+TABLE OF CONTENTS  
+  Page No.  
+Acknowledgement   i 
+Abstract   ii  
+List of Figures   iii  
+List of Tables   iii 
+Chapter 1  INTRODUCTION  1 
+ 1.1 Introduction to Work Done  1 
+ 1.2 Motivation  1 
+ 1.3 Problem Statement  2 
+ 1.4 Research Objectives  3 
+ 1.5 Organization of Report  3 
+Chapter 2  LITERATURE REVIEW   4-7 
+ 2.1 Conceptual Overview  4 
+ 2.2 Review of Existing Methodologies  4 
+ 2.2.1 Static and Isolated Sign Recognition  4-5 
+ 2.2.2 Continuous and Dynamic Sign Recognition  5-6 
+ 2.3 Outcome of Literature Review  7 
+Chapter 3  METHODOLOGY AND FRAMEWORK   8-11 
+--- Page 4 ---
+  Page No.  
+ 3.1 Proposed Methodology  8 
+ 3.2 System Architecture  8-9 
+ 3.3 Algorithms and Techniques  9 
+ 3.4 Implementation Plan  10-11 
+Chapter 4  CONCLUSIONS   12 
+ 4.1 Conclusion  12 
+ 4.2 Future Scope  12 
+REFERENCES   13 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- Page 5 ---
+P a g e  | 1 
+ 
+CHAPTER 1  
+INTRODUCTION  
+ 
+1.1 Introduction to Work Done  
+Sign language translators are systems designed to convert visual, gestural information into textual or 
+spoken forms, thereby bridging communication gaps for deaf and hard -of-hearing communities. This 
+project focuses specifically on Indian Sign Language (ISL), t he primary mode of communication for over 
+2.7 million users in India. The core of this research -oriented project is the development of a system capable 
+of processing live video feeds to detect and translate ISL sequences. The system is designed to support 
+both isolated words and, more importantly, continuous expressions, which are crucial for minimizing 
+misinterpretation during dynamic, real -time interactions. The final output will be translated into accessible 
+Hindi or English equivalents.  
+ 
+1.2 Motivation  
+The motivation for this project is rooted in the persistent communication barriers faced by India's hearing -
+impaired population, which exceeds 5 million people. A critical lack of access to qualified ISL 
+interpreters —with estimates suggesting fewer than 5 % have access —severely impacts essential domains 
+like education, healthcare, and legal services. This exclusion directly contributes to socio -economic 
+disparity, evidenced by an unemployment rate above 75% among hearing -impaired individuals in India.  
+While  technological solutions exist, they are predominantly ASL -centric and fail to address the unique 
+linguistic properties of ISL, thereby exacerbating exclusion. This research aims to develop a culturally 
+adaptive tool that specifically targets these gaps. B y aligning with global accessibility standards, such as 
+those outlined in the UN Convention on the Rights of Persons with Disabilities, this project justifies 
+intervention by targeting underexplored areas and fostering digital inclusion.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- Page 6 ---
+P a g e  | 2 
+ 
+1.3 Problem Statement  
+ 
+The development of an accurate ISL translator faces significant technical and linguistic challenges that are 
+not addressed by current -generation systems. The problem can be broken down into the following key 
+areas:  
+ Linguistic Comple xity:  ISL is a complete language with its own grammar and syntax, which is 
+distinct from spoken languages and other sign languages like ASL. Key complexities include:  
+o Two -Handed Configurations:  Many ISL signs require complex, coordinated movements 
+of both hands, which are difficult to track and interpret simultaneously.  
+o Non-Manual Markers (NMMs):  ISL grammar relies heavily on NMMs, such as facial 
+expressions, head tilts, eye gaze, and body posture. These subtle cues can alter meaning, 
+(e.g., transforming a statement into a question).  
+o Syntactic and Regional Variations:  ISL often uses a Topic -Comment structure, unlike 
+the Subject -Verb -Object structure of English. Furthermore, it has significant regional 
+dialects (e.g., urban Delhi vs. rural Tamil Nadu variants ) that models must learn to 
+generalize.  
+ Technical Hurdles:  
+o Co-articulation and Transitions:  In continuous, fluid signing, signs blend together (co -
+articulation), and models must distinguish meaningful signs from the transitional 
+movements between them.  
+o Environmental Variability:  A real -world system must be robust to diverse signing styles, 
+speeds, and real -world challenges like poor lighting, cluttered backgrounds, and partial 
+hand or body occlusion.  
+o Dataset Scarcity:  Deep learning models require massive, high -quality, annotated video 
+datasets. For low -resource languages like ISL, such datasets are critically scarce, which 
+hinders model training and generalization.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- Page 7 ---
+P a g e  | 3 
+ 
+1.4 Research Objectives  
+ 
+Based on the identified problem statement, this project aims to achieve the following research objectives, 
+as outlined in the synopsis:  
+1. Investigate a hybrid CNN -Transformer architecture  for continuous ISL recognition. This 
+involves evaluating its performance on augment ed datasets with the goal of achieving a mean 
+average precision (mAP) above 97% to quantify improvements over static baselines.  
+2. Evaluate bidirectional translation mechanisms , supporting ISL -to-text/speech and the reverse. 
+This will be measured through empi rical trials with 15 -20 diverse signers, aiming for BLEU 
+(Bilingual Evaluation Understudy) scores exceeding 0.75 to assess syntactic and cultural accuracy.  
+3. Develop and benchmark a public ISL video repository  that surpasses 1,000 unique samples. 
+This contri bution aims to address the dataset scarcity gap and measure generalizability for future 
+accessibility research publications.  
+ 
+1.5 Organization of Report  
+ 
+This report is organized into four chapters.  
+ Chapter 1  provides an introduction to the project, outli nes the motivation, defines the problem 
+statement, and lists the research objectives.  
+ Chapter 2  presents a comprehensive literature review of existing methodologies in ISL 
+recognition, highlighting current advancements and identifying the research gaps tha t this project 
+addresses.  
+ Chapter 3  details the proposed methodology and framework, including the system architecture, 
+the algorithms and techniques employed, and a phased implementation plan.  
+ Chapter 4  concludes the report, summarizing the key findings and discussing potential avenues 
+for future work.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- Page 8 ---
+P a g e  | 4 
+ 
+CHAPTER 2  
+LITERATURE REVIEW  
+ 
+2.1 Conceptual Overview  
+Explorations into ISL translation have seen rapid advancements with the advent of deep lea rning, 
+particularly for gesture detection. Early research efforts prioritized high -accuracy detection of individual, 
+static gestures (e.g., alphabets, numbers) and isolated words. These systems often employed Convolutional 
+Neural Networks (CNNs) combined w ith hand -tracking tools like MediaPipe.  
+More recently, research has shifted towards tackling the more complex challenge of continuous and 
+dynamic sign recognition, which requires modeling spatiotemporal dynamics. This has led to the 
+integration of recurrent architectures like LSTMs (Long Short -Term Memory) and GRUs (Gated 
+Recurrent Units), as well as transformer -based models (e.g., VideoMAE, TimeSformer) that use attention 
+mechanisms to process video sequences. Despite progress, persistent issues remain, including robust 
+support for continuous si gning, handling regional dialects, and managing the computational overhead of 
+these advanced models.  
+ 
+2.2 Review of Existing Methodologies  
+To inform the gaps in real -time, bidirectional systems, this review examines several recent studies from 
+2024 -2025, c ategorizing them by their scope and methodology.  
+2.2.1 Static and Isolated Sign Recognition  
+These systems focus on classifying discrete signs, forming the foundation for more complex models.  
+ CNN -Based Static Detection (2025):  One study details a CNN -based system to detect 35 static 
+ISL gestures. It uses sequential convolutional layers, ReLU activation, batch normalization, and 
+MediaPipe for hand tracking. Trained on over 42,000 images, it achieved an exceptional 99.95% 
+accuracy, outperforming baselines like  VGG16. While robust to lighting, its focus is limited to 
+static alphabets and digits, with no support for continuous sequences.  
+ Machine Learning Baselines (2025):  Another approach used traditional ML models, such as 
+Random Forest with ORB/SIFT descriptors  and SVM classifiers, to achieve 98.44% accuracy on 
+a 35-gesture dataset. These models are lightweight and deployable on standard CPUs. However, 
+they are highly sensitive to lighting conditions and are limited to alphabets and numbers, neglecting 
+full synt actic translation.  
+ Recurrent Nets for Alphanumeric ISL (2025):  A hybrid model using LSTM -GRU sequences 
+with optimized CNNs was developed to handle alphanumeric ISL from a 50,000 -image set. It 
+achieved 99.4% accuracy on benchmarks and enabled multilingual speech output. Its primary 
+limitation is its restriction to dis crete classes, lacking the ability to process continuous sign flow.  
+--- Page 9 ---
+P a g e  | 5 
+ 
+ MediaPipe -CNN -LSTM (2024):  This fusion model was designed to recognize specific 
+emergency -related words. It achieved 98% accuracy at 25 FPS, showing robustness to occlusion. 
+However, its s cope is term -limited, and it suffers from temporal errors.  
+ 
+2.2.2 Continuous and Dynamic Sign Recognition  
+These more advanced systems attempt to interpret fluid, connected sign sequences.  
+ YOLOv10 -ST (2025):  This framework integrates Swin Transformer blocks  into the YOLOv10 
+object detection model for multi -scale ISL gesture detection. It achieved 97.62% mAP on static 
+signs and an impressive 48.7 FPS on an RTX 3080 GPU. Its self -attention mechanism provides 
+excellent occlusion robustness, making it ideal for mobile translators. Its main drawbacks are a 
+modest dynamic video corpus (35 videos), risking overfitting, and a lack of full temporal 
+sequencing for extended dialogues.  
+ VideoMAE & Transformers (2025):  A comparative study evaluated models like VideoMAE, 
+TimeSformer, and CNN -BiLSTM for isolated ISL word recognition. VideoMAE, using masked 
+autoencoders, achieved a leading 96% accuracy. While benchmarking was standardized, the 
+training was highly GPU -intensive (up to 9,964 seconds) and the scope was restricted  to single 
+words, overlooking co -articulation.  
+ CNN -LSTM -Transformer Pipeline (2025):  A vision -based pipeline was developed to translate 
+both isolated and continuous ISL into English. It achieved 96.1% classification accuracy and a 0.74 
+BLEU score for sente nces. A significant con was the use of ASL -augmented data, which led to 
+cultural mismatches and a 6.3% word error rate on rapid signs. Furthermore, the LSTM memory 
+overhead limited its viability on low -end hardware.  
+ Pose -GCN (2025):  This approach used Grap h Convolutional Networks (GCNs) on skeletal 
+keypoints with a Transformer seq2seq model for continuous sentence translation. It is lightweight 
+and achieved a 0.78 BLEU score. Its primary weakness is sensitivity to keypoint errors from 
+occlusion and difficul ty with fine handshape distinctions.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- Page 10 ---
+P a g e  | 6 
+ 
+Table – 2.1 
+Work 
+(Year)  Accuracy/mA
+P Speed 
+(FPS or 
+equiv.)  Scope  Pros  Cons  
+CNN 
+Detection 
+(2025)   99.95%  N/A 
+(real-
+time)  Static (35 
+gestures)  High 
+precision, 
+lighting -
+robust  Static -
+only, 
+vocab -
+limited  
+YOLOv10 -
+ST (2025)   97.62% mAP  48.7  Static/dynamic 
+gestures  Occlusion -
+robust, high 
+FPS  Small 
+video 
+data, no 
+temporal 
+seq.  
+VideoMAE 
+et al. (2025)  96%  28s 
+inferenc
+e  Isolated words  Reproducibl
+e, edge -
+suited  GPU -
+intensive, 
+no co -
+articulatio
+n  
+CNN -
+LST M-
+Transforme
+r (2025)   96.1%  18  Isolated/continuo
+us  Scalable 
+fusion, 
+BLEU 0.74  Cultural 
+errors, 
+hardware 
+limits  
+LSTM -
+GRU -CNN 
+(2025)   99.4%  N/A Alphanumeric 
+isolated  Multilingual 
+output  Discrete 
+only, 
+privacy 
+risks  
+MediaPipe -
+CNN -
+LSTM 
+(2024)   98%  25  Emergency words  Practical, 
+occlusion 
+handling  Term -
+limited, 
+temporal 
+errors  
+ 
+ 
+--- Page 11 ---
+P a g e  | 7 
+ 
+2.3 Outcome of Literature Review  
+The literature survey reveals a clear trend: while static sign recognition has achieved impressive accuracy 
+(often 95 -99%), this performance does not translate to the far more complex domain of continuous, 
+dynamic sign language translation. The review highlights several critical gaps that this project will address:  
+1. Continuous Signing Support:  This remains the most significant open c hallenge. Most high -
+accuracy models are limited to isolated words or alphabets. Models that do attempt continuous 
+translation struggle with co -articulation, temporal sequencing, and high error rates.  
+2. Dataset Scarcity:  Progress is fundamentally bottlenecked  by the lack of large -scale, high -quality, 
+and richly annotated ISL video datasets. Many studies use small, private datasets (e.g., 35 videos 
+), which limits generalizability and risks overfitting.  
+3. Computational and Hardware Limits:  Many promising models ( e.g., VideoMAE, LSTM 
+pipelines) are computationally expensive, requiring high -end GPUs for training and inference, or 
+suffering from memory overhead. This limits their practical deployment on real -time or edge 
+devices.  
+4. Cultural and Linguistic Nuance:  The u se of ASL -augmented data introduces cultural mismatches 
+and translation errors. Existing technologies largely overlook ISL's unique topic -comment 
+structure and regional dialects, which is a key focus of this project.  
+This review confirms the need for hybri d architectures, like the proposed CNN -Transformer, which can 
+balance precision and temporal analysis. Furthermore, it underscores the necessity of building new, 
+augmented, and culturally -specific ISL resources to elevate research impact.  
+ 
+ 
+Figure 2.1  
+ 
+ 
+
+--- Page 12 ---
+P a g e  | 8 
+ 
+CHAPTER 3  
+METHODOLOGY AND FRAMEWORK  
+ 
+3.1 Proposed Methodology  
+To address the gaps identified in the literature, this project proposes a hybrid deep learning pipeline. This 
+"how" of the project is designed to be robust, efficient, and culturally adaptive, moving beyond simple 
+static sign recognition to handle continuous, dynamic ISL sequences. The methodology fuses advanced 
+computer vision for feature extraction with deep learning architectures optimized for spatiotemporal 
+analysis. The entire system will b e trained on a custom -augmented ISL corpus to ensure it handles real -
+world variability and low -resource constraints.  
+3.2 System Architecture  
+The proposed system architecture is a multi -stage pipeline designed for real -time processing of live video 
+feeds.  
+1. Input and Landmark Extraction:  The pipeline begins with a live video feed from a standard 
+webcam. This feed is processed by a computer vision module powered by MediaPipe . This module 
+performs high -fidelity, real -time tracking to extract crucial landmarks, including 21 hand keypoints 
+and 33 body keypoints. Using MediaPipe provides robustness against common environmental 
+challenges like occlusion and varying lighting.  
+2. Spatiotemporal Analysis:  The sequence of extracted landmark data is fed into a hybrid deep 
+learning model.  
+o CNN Backbone:  A Convolutional Neural Network (CNN), inspired by efficient 
+architectures like EfficientNet , processes the spatial information from the landmarks to 
+analyze intricate hand configurations and poses.  
+o Transformer Decoder:  The output features from the CNN are passed to a Transformer  
+architecture. The transformer's self -attention mechanism analyzes the temporal movement 
+patterns, learning the relationships between signs across the entire sequence to understand 
+context and gr ammar.  
+3. Translation and Output:  The final layer of the transformer outputs a sequence of recognized ISL 
+signs.  
+o ISL-to-Text:  This sequence is passed to a sequence -to-sequence (seq2seq)  model, which 
+translates the sign sequence into its syntactically correct English or Hindi equivalent.  
+o Text -to-Speech (TTS):  The generated text is then fed into a Google TTS  API to produce 
+a multilingual speech output.  
+--- Page 13 ---
+P a g e  | 9 
+ 
+o Bidirectional Flow:  The framework also includes a reverse mapping module to enable 
+text-to-sign translation, fu lfilling the bidirectional objective.  
+4. User Interface:  A Streamlit  interface will be developed to provide a user -friendly application for 
+live webcam trials, displaying the translated text in real -time.  
+ 
+Figure 3.1  
+ 
+3.3 Algorithms and Techniques  
+The imple mentation will leverage several key technologies and algorithms:  
+ Core Models:  
+o MediaPipe:  For efficient and robust pose and hand landmark extraction.  
+o Convolutional Neural Networks (CNN):  An EfficientNet -inspired backbone will be used 
+for spatial feature ext raction.  
+o Transformer:  A transformer decoder will be used for temporal sequence modeling, 
+leveraging attention to capture long -range dependencies in sign language.  
+ Training and Implementation:  
+o Framework:  The system will be implemented in PyTorch . 
+o Data Augmentation:  OpenCV  will be used to apply augmentations (e.g., flips, rotations, 
+brightness changes) to the corpus to improve model robustness and generalize against 
+varied illuminations.  
+o Optimization:  The model will be trained using the Adam optimizer  with focal loss  to 
+handle class imbalances.  
+o Transfer Learning:  To accelerate training, the CNN backbone will be initialized using 
+transfer learning  from weights pre -trained on the Kinetics dataset.  
+ Evaluation Metrics:  
+o Detection:  Mean Average Precision (mAP) and F1 -Score.  
+o Translation:  BLEU (Bilingual Evaluation Understudy) score.  
+o Performance:  Latency and Frames -Per-Second (FPS).  
+
+--- Page 14 ---
+P a g e  | 10 
+ 
+3.4 Implementation Plan  
+The project is structured into five distinct phases over a 15 -week timeline, incorporating iterative 
+validati on and ethical data handling.  
+ Phase 1: Gap Refinement and Corpus Assembly (Weeks 1 -4)  
+o Tasks:  Conduct a comprehensive literature synthesis to finalize research gaps. Aggregate 
+an initial corpus of 800+ ISL clips from sources like iSign and custom recording s with 10 
+diverse signers.  
+o Data Handling:  Apply OpenCV augmentations and MediaPipe for keypoint extraction. 
+Secure anonymized consents for all custom data. Partition data into 70/15/15 (train/val/test) 
+splits.  
+o Milestone:  Preprocessed dataset ready for base line training.  
+ Phase 2: Architecture Prototyping (Weeks 5 -6)  
+o Tasks:  Construct the hybrid CNN -Transformer architecture. Initialize with Kinetics pre -
+trained weights.  
+o Training:  Train sequentially, first on static subsets (50 epochs) and then escalating to 
+dynamic sequences. Use TensorBoard for convergence tracking.  
+o Milestone:  A functional hybrid model achieving >95% preliminary accuracy on validation 
+data.  
+ Phase 3: Translation Pipeline Integration (Weeks 7 -9)  
+o Tasks:  Incorporate the seq2seq model for ISL -to-text translation. Append Google TTS for 
+speech output. Develop the bidirectional (text -to-ISL) mapping.  
+o Interface:  Prototype a Streamlit interface for live webcam trials on a set of 60 common 
+phrases.  
+o Milestone:  A working bidirectional application prototyp e. 
+ Phase 4: Assessment (Weeks 10 -12)  
+o Tasks:  Conduct rigorous evaluation. Compute mAP, F1 -score, BLEU, and latency across 
+varied scenarios (e.g., occluded hands, fast signing).  
+o Validation:  Solicit qualitative usability feedback from DHH (Deaf and Hard of Hearing) 
+volunteers. Conduct t -tests against surveyed baselines.  
+o Milestone:  A comprehensive metrics report and t -test results.  
+ Phase 5: Synthesis and Dissemination (Weeks 13 -15)  
+--- Page 15 ---
+P a g e  | 11 
+ 
+o Tasks:  Package the augmented dataset for public release on Kaggle. Draft a full research 
+paper (Abstract, Methods, Results, Discussion) for submission to an IEEE conference.  
+o Refinement:  Integrate peer and supervisor feedback and generate final figures/tables.  
+o Milest one: Public dataset release and a submission -ready IEEE draft.  
+ 
+Table - 3.1 
+Phase  Duration (Weeks)  Outputs  
+Lit Synthesis & Gaps  1-4 Gap report, 800+ augmented samples  
+Prototyping  5-6  Hybrid model >95% prelim acc  
+Integration  7-9  Bidirectional app prototype  
+Assessment  10-12  Metrics report, t -test results  
+Synthesis & Paper  13-15  Dataset release, IEEE draft  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- Page 16 ---
+P a g e  | 12 
+ 
+CHAPTER 4  
+CONCLUSIONS  
+ 
+4.1 Conclusion  
+This project addresses the critical communication gap faced by over 5 million hearing -impaired individuals 
+in India by developing a bidirectional ISL translator. The literature review confirmed that while deep 
+learning has enabled high -precision static sign recognition (often >97%), significant research gaps persist 
+in handling continuous signing, dataset scarcity, and the linguistic nuances of ISL. Existing systems, often 
+ASL-centric, fail to manage ISL's unique grammar and regional variations, perpetuating digital exclusion.  
+To bridge these gaps, this projec t proposes a hybrid CNN -Transformer architecture. This methodology 
+leverages MediaPipe for robust landmark extraction and combines the spatial analysis power of CNNs 
+with the temporal modeling capabilities of Transformers. The planned work includes the cre ation of an 
+augmented 1,000+ sample video repository and a phased implementation plan to build and rigorously test 
+the system. The objective is to deliver a prototype that not only achieves high accuracy (mAP > 97%, 
+BLEU > 0.75) but also reduces translatio n latency by up to 40%.  
+This framework moves beyond a simple translation tool; it serves as a research contribution to advance 
+the theoretical understanding of culturally adaptive models for low -resource sign languages, aligning with 
+UN accessibility goals  and paving the way for more inclusive technology.  
+ 
+4.2 Future Scope  
+While this project establishes a robust foundation, future work can expand upon its contributions. The 
+primary avenue for extension is the continued expansion and diversification of the d ataset, moving well 
+beyond the 1,000 -sample goal to include more signers, topics, and regional dialects to improve linguistic 
+equity. Further research could focus on optimizing the hybrid model for deployment on edge devices, such 
+as mobile phones, which w ould drastically increase accessibility. Additionally, refining the non -manual 
+marker detection (facial expressions, eye gaze) remains a complex challenge that, if solved, would 
+significantly enhance the system's grammatical accuracy and contextual underst anding.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- Page 17 ---
+P a g e  | 13 
+ 
+REFERENCES  
+ 
+[1] R. Singhal, J. Gupta, A. Sharma, A. Gupta, and N. Sharma, “Indian Sign Language Detection for Real -Time Translation 
+using Machine Learning,” arXiv preprint arXiv:2507.20414 , 2025.  
+[2] M. Kumar, et al., “Enhanced Sign Language Translation between American Sign Language (ASL) and Indian Sign Language 
+(ISL) Using LLMs,” arXiv preprint arXiv:2411.12685 , 2024.  
+[3] R. Temkar, S. Jagtap, K. Jadhav, and M. Deshmukh, “Real -time Sign Languag e Recognition Using MobileNetV2 and 
+Transfer Learning,” arXiv preprint arXiv:2412.07486 , 2024.  
+[4] A. Joshi, R. Mohanty, M. Kanakanti, A. Mangla, S. Choudhary, ... & N. Vyas, “iSign: A Benchmark for Indian Sign 
+Language Processing,” arXiv preprint arXiv:2 407.05404 , 2024.  
+[5] A. Mishra, S. Gupta, D. Goel, and V. Tiwari, “ISL Recognition of Emergency Words Using MediaPipe, CNN and LSTM,” 
+in 2023 International Conference on Power Energy, Environment & Intelligent Control (PEEIC) , 2024, pp. 1 -6.  
+[6] A. Kumar , et al., “Advanced gesture recognition in Indian sign language using a synergistic combination of YOLOv10 with 
+Swin Transformer model,” Scientific Reports , vol. 15, no. 18496, 2025.  
+[7] A. Bhatt, and M. Joshi, “Real -Time Continuous Indian Sign Language T ranslation using Pose -Based Graph Convolutional 
+Networks,” in Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2025.  
+[8] S. Narayan, and R. Devi, “Decolonizing AI: Ethical Frameworks for Sign Language Technologies in the Global South,” 
+Journal of Disability & Technology , vol. 12, no. 1, pp. 45 -62, 2024.  
+[9] P. Sharma, and V. Singh, “A Comprehensive Survey of Vision -Based Continuous Sign Language Recognition: Challenges 
+and Future Directions,” IEEE Transactions on P attern Analysis and Machine Intelligence , vol. 47, no. 3, pp. 1120 -1138, 2025.  
+[10] Anonymous, “A Real -Time Indian Sign Language Recognition System Using Deep Learning,” IEEE , 2025.  
+[11] Anonymous, “Deep Learning -Based Sign Language Recognition Using Eff icient Multi -Feature Attention Mechanism,” 
+IEEE , 2025.  
+ 
+ 

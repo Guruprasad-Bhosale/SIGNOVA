@@ -1,0 +1,98 @@
+{
+  "experiment_dir": "G:\\SingLang\\SIGNOVA\\models\\experiments\\exp_ablation_hands_only",
+  "best_epoch": 3,
+  "best_val_metric": 1.0,
+  "total_train_time_sec": 32.65,
+  "training_history": [
+    {
+      "epoch": 1,
+      "train_loss": 2.2748,
+      "val_loss": 2.0718,
+      "val_accuracy": 0.5,
+      "val_macro_f1": 0.3833,
+      "val_weighted_f1": 0.3833,
+      "epoch_time_sec": 4.1,
+      "lr": 0.0003
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.8018,
+      "val_loss": 1.265,
+      "val_accuracy": 0.7,
+      "val_macro_f1": 0.6,
+      "val_weighted_f1": 0.6,
+      "epoch_time_sec": 4.04,
+      "lr": 0.0003
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.0744,
+      "val_loss": 0.7127,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "epoch_time_sec": 4.11,
+      "lr": 0.0003
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.632,
+      "val_loss": 0.4118,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "epoch_time_sec": 4.0,
+      "lr": 0.0003
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.3859,
+      "val_loss": 0.214,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "epoch_time_sec": 4.0,
+      "lr": 0.0003
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.2012,
+      "val_loss": 0.093,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "epoch_time_sec": 4.15,
+      "lr": 0.00015
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.098,
+      "val_loss": 0.0618,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "epoch_time_sec": 3.93,
+      "lr": 0.00015
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.0541,
+      "val_loss": 0.0316,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "epoch_time_sec": 4.08,
+      "lr": 0.00015
+    }
+  ],
+  "test_metrics": {
+    "loss": 0.715,
+    "accuracy": 0.9333,
+    "balanced_accuracy": 0.9333,
+    "macro_precision": 0.96,
+    "macro_recall": 0.9333,
+    "macro_f1": 0.925,
+    "weighted_f1": 0.925,
+    "top5_accuracy": 1.0
+  }
+}

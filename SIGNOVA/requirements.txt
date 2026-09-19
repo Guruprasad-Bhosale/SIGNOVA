@@ -1,0 +1,29 @@
+# SIGNOVA Core Dependencies
+# Install instructions in docs/development.md
+
+# Data Processing & Config
+numpy>=1.26.0
+pandas>=2.1.0
+scipy>=1.11.0
+pyyaml>=6.0.1
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+python-dotenv>=1.0.0
+
+# Computer Vision & Landmarks
+opencv-python>=4.8.0
+mediapipe>=0.10.9
+pillow>=10.1.0
+
+# Scikit-learn
+scikit-learn>=1.3.0
+
+# API & Streaming
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+websockets>=12.0
+
+# CLI & Output
+tqdm>=4.66.0
+rich>=13.7.0
+colorama>=0.4.6

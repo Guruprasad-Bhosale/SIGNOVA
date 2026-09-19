@@ -1,0 +1,13 @@
+batch_size: 4
+created_at_utc: '2026-09-17T16:35:05Z'
+device: auto
+epochs: 2
+grad_accum: 4
+landmark_group: full
+lr: 0.0003
+manifest: G:\SingLang\SIGNOVA\data\manifests\phase3_manifest.csv
+mixed_precision: true
+model: baseline_tcn
+num_classes: 10
+num_landmarks: 543
+smoke_test: true

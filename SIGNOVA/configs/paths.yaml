@@ -1,0 +1,25 @@
+# SIGNOVA Project Path Hierarchy Configuration
+# Uses relative paths resolved from the project root directory
+
+paths:
+  project_root: "."
+  data_root: "./data"
+  raw: "./data/raw"
+  interim: "./data/interim"
+  processed: "./data/processed"
+  features: "./data/features"
+  annotations: "./data/annotations"
+  manifests: "./data/manifests"
+  external: "./data/external"
+
+  datasets_dir: "./datasets"
+  checkpoints: "./models/checkpoints"
+  exported_models: "./models/exported"
+  experiments: "./models/experiments"
+
+  outputs: "./outputs"
+  predictions: "./outputs/predictions"
+  metrics: "./outputs/metrics"
+  visualizations: "./outputs/visualizations"
+  reports: "./outputs/reports"
+  logs: "./logs"

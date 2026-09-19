@@ -1,0 +1,13 @@
+token_id,token,total_frequency,train_frequency,val_frequency,test_frequency
+0,<BLANK>,0,0,0,0
+1,<UNK>,0,0,0,0
+2,HELLO,1,1,0,0
+3,THANK_YOU,1,1,0,0
+4,NAME,1,1,0,0
+5,WHAT,1,1,0,0
+6,WHERE,1,1,0,0
+7,PLEASE,1,1,0,0
+8,HELP,1,1,0,0
+9,GOOD_MORNING,1,1,0,0
+10,SIGN,1,1,0,0
+11,LANGUAGE,1,1,0,0

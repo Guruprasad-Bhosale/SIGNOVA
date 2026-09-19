@@ -1,0 +1,8 @@
+dataset_id,candidate_id,source_url,source_name,license,cost_status,acquisition_status,artifact_path,artifact_sha256,artifact_size_bytes,acquired_at,dataset_version,annotation_status,verification_status,rejection_reason,provenance_id
+isl-csltr,cand_01,https://data.mendeley.com/datasets/kcmpdxky7p/1,Mendeley Data,CC BY 4.0,FREE,NO_ELIGIBLE_DATASET,N/A,N/A,0,2026-09-18T23:37:00+05:30,1.0,UNACQUIRED,UNVERIFIED,NO_ORDERED_GLOSS,acq_isl-csltr_cand_01
+isltranslate,cand_02,https://github.com/Exploration-Lab/ISLTranslate,Exploration-Lab,Research Only,FREE,NO_ELIGIBLE_DATASET,N/A,N/A,0,2026-09-18T23:37:00+05:30,1.0,UNACQUIRED,UNVERIFIED,ENGLISH_ONLY,acq_isltranslate_cand_02
+isl-fingerspelling,cand_03,https://kirandevraj.github.io/ISL-Fingerspelling/,ACL 2023,CC BY-NC 4.0,FREE,NO_ELIGIBLE_DATASET,N/A,N/A,0,2026-09-18T23:37:00+05:30,1.0,UNACQUIRED,UNVERIFIED,UNVERIFIED_ANNOTATION,acq_isl-fingerspelling_cand_03
+islvt,cand_04,https://data.mendeley.com/datasets/38mfd79bzy/1,Mendeley Data,CC BY 4.0,FREE,NO_ELIGIBLE_DATASET,N/A,N/A,0,2026-09-18T23:37:00+05:30,1.0,UNACQUIRED,UNVERIFIED,NO_ORDERED_GLOSS,acq_islvt_cand_04
+include,cand_05,https://github.com/AI4Bharat/INCLUDE,AI4Bharat,CC BY-NC-SA 4.0,FREE,NO_ELIGIBLE_DATASET,N/A,N/A,0,2026-09-18T23:37:00+05:30,1.0,UNACQUIRED,UNVERIFIED,ISOLATED_ONLY,acq_include_cand_05
+iiith-cislr,cand_06,Institutional Lab Archive,CVIT IIIT-H,Restricted Institutional,FREE,REJECTED,N/A,N/A,0,2026-09-18T23:37:00+05:30,1.0,UNACQUIRED,REJECTED_LICENSE,ACCESS_RESTRICTED,acq_iiith-cislr_cand_06
+commercial-vendor,cand_07,Commercial Vendor Portal,Commercial Sign Vendor,Commercial Proprietary,PAID,REJECTED,N/A,N/A,0,2026-09-18T23:37:00+05:30,1.0,UNACQUIRED,REJECTED_COST,PAID_NOT_USED,acq_commercial-vendor_cand_07
